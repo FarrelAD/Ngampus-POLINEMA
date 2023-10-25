@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class HitungIP12java {
+public class HitungIP12 {
     public static void main(String[] args) {
         Scanner scan1 = new Scanner(System.in);
         Scanner scan2 = new Scanner(System.in);
