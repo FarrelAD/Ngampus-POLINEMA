@@ -18,7 +18,7 @@ public class Bioskop12 {
         System.out.printf("%s \t %s\n", penonton[2][0], penonton[2][1]);
         System.out.printf("%s \t %s\n", penonton[3][0], penonton[3][1]);
 
-        System.out.println("====================================================================");
+        System.out.println("===================================================================="); // Pembatas
 
         // Menampilkan berapa panjang dari nilai pada array
         System.out.println(penonton.length);
@@ -27,7 +27,7 @@ public class Bioskop12 {
         System.out.println(penonton[2].length);
         System.out.println(penonton[3].length);
 
-        System.out.println("====================================================================");
+        System.out.println("===================================================================="); // Pembatas
 
         // Menampilkan panjang setiap baris pada array
         System.out.println(penonton.length);
@@ -35,12 +35,22 @@ public class Bioskop12 {
             System.out.println("Panjang baris ke-"+ (i+1) + ": " + penonton[i].length);
         }
 
-        System.out.println("====================================================================");
+        System.out.println("===================================================================="); // Pembatas
 
         // Menampilkan panjang setiap baris pada array menggunakan foreach loop
         System.out.println(penonton.length);
         for (String[] barisPentonton : penonton) {
             System.out.println("Panjang baris: " + barisPentonton.length);
         }
+        
+        System.out.println("===================================================================="); //Pembatas
+
+        // Menampilkan nama penonton pada baris ke-3 menggunakan for loop
+        System.out.println("Penonton pada baris ke-3: ");
+        for (int i = 0; i < penonton[2].length; i++) {
+            System.out.println(penonton[2][i]);
+        }
+
+
     }
 }
