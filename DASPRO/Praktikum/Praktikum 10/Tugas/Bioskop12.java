@@ -51,6 +51,14 @@ public class Bioskop12 {
             System.out.println(penonton[2][i]);
         }
 
+        System.out.println("===================================================================="); //Pembatas
+
+        // Modifikasi code untuk menampilkan baris ke-3 menggunakan for-each loop
+        System.out.println("Penonton pada baris ke-3: ");
+        for (String i : penonton[2]) {
+            System.out.println(i);
+        }
+
 
     }
 }
