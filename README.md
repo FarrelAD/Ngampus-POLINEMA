@@ -4,7 +4,7 @@ I hope this repository can help me to manage my college stuff. I also hope this 
 ## My college subjects
 ### 1st semester
 - DASPRO (Dasar Pemrograman) (Teori) 
-- Praktikum DASPRO
+- [Praktikum DASPRO](https://github.com/FarrelAD/Kuliah-POLINEMA/tree/main/Semester%201/Praktikum%20DASPRO)
 - MATDAS (Matematika Dasar)
 - Pancasila
 - ENGLISH
