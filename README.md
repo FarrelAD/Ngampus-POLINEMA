@@ -8,7 +8,7 @@ I hope this repository can help me to manage my college stuff. I also hope this 
 - [MATDAS (Matematika Dasar)](https://github.com/FarrelAD/Kuliah-POLINEMA/tree/main/Semester%201/MATDAS)
 - Pancasila
 - ENGLISH
-- CTPS (Critical Thinking and Problem Solving)
+- [CTPS (Critical Thinking and Problem Solving)](https://github.com/FarrelAD/Kuliah-POLINEMA/tree/main/Semester%201/CTPS)
 - K3
 - KTI (Konsep Teknologi Informasi)
    
