@@ -1,4 +1,8 @@
 # My-Personal-College-Repository
+<p align="center">
+   <img src="https://media.tenor.com/uyV5AiN5CxsAAAAC/spongebob-study.gif" width="33%" alt="Spongebob Belajar">
+</p>
+
 All of my college materials and some of my college assignments as an applied undergraduate student at State Polytechnic of Malang. 
 I hope this repository can help me to manage my college stuff. I also hope this repository can survive for a long time and still accessible. :)
 ## My college subjects
