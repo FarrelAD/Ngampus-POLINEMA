@@ -14,5 +14,5 @@ I hope this repository can help me to manage my college stuff. I also hope this 
 - [ENGLISH](https://github.com/FarrelAD/Ngampus-POLINEMA/tree/main/Semester%201/ENGLISH%201)
 - [CTPS (Critical Thinking and Problem Solving)](https://github.com/FarrelAD/Kuliah-POLINEMA/tree/main/Semester%201/CTPS)
 - [K3](https://github.com/FarrelAD/Ngampus-POLINEMA/tree/main/Semester%201/K3)
-- KTI (Konsep Teknologi Informasi)
+- [KTI (Konsep Teknologi Informasi)](https://github.com/FarrelAD/Ngampus-POLINEMA/tree/main/Semester%201/KTI%20(Konsep%20Teknologi%20Informasi))
    
