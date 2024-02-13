@@ -17,4 +17,12 @@ I hope this repository can help me to manage my college stuff. I also hope this 
 - [KTI (Konsep Teknologi Informasi)](https://github.com/FarrelAD/Ngampus-POLINEMA/tree/main/Semester%201/KTI%20(Konsep%20Teknologi%20Informasi))
 
 ### 2nd semester
-   
+- [AGAMA](https://github.com/FarrelAD/Ngampus-POLINEMA/tree/main/Semester%202/01-AGAMA)
+- ALJABAR LINEAR
+- REKAYASA PERNAGKAT LUNAK
+- ALGORITMA DAN STRUKTUR DATA
+- PRAK. ALGORITMA DAN STRUKTUR DATA
+- [BASIS DATA](https://github.com/FarrelAD/Ngampus-POLINEMA/tree/main/Semester%202/06-BASIS%20DATA)
+- PRAK. BASIS DATA
+- [SISTEM OPERASI](https://github.com/FarrelAD/Ngampus-POLINEMA/tree/main/Semester%202/08-SISTEM%20OPERASI)
+- DESAIN ANTARMUKA
