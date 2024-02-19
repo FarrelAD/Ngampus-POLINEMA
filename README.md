@@ -19,7 +19,7 @@ I hope this repository can help me to manage my college stuff. I also hope this 
 ### 2nd semester
 - [AGAMA](https://github.com/FarrelAD/Ngampus-POLINEMA/tree/main/Semester%202/01-AGAMA)
 - ALJABAR LINEAR
-- REKAYASA PERNAGKAT LUNAK
+- [REKAYASA PERNAGKAT LUNAK](https://github.com/FarrelAD/Ngampus-POLINEMA/tree/main/Semester%202/03-REKAYASA%20PERANGKAT%20LUNAK)
 - ALGORITMA DAN STRUKTUR DATA
 - PRAK. ALGORITMA DAN STRUKTUR DATA
 - [BASIS DATA](https://github.com/FarrelAD/Ngampus-POLINEMA/tree/main/Semester%202/06-BASIS%20DATA)
