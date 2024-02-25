@@ -30,15 +30,15 @@ Pertanyaan:
 
 1. **Sebutkan dua karakteristik class atau object!**
 
-    Jawab: Class: terdapat atribut yang bisa diganti saat instansiasi objek. Object: harus memiliki class agar bisa diinstansiasikan, tiap object bisa memiliki atribut/identitas yang berbeda.
+    Jawab: Class: terdapat atribut yang bisa diganti saat instansiasi objek, sebuah blueprint yang artinya merupakan sebuah template yang bisa digunakan berulang kali. Object: harus memiliki class agar bisa diinstansiasikan, tiap object bisa memiliki atribut/identitas yang berbeda.
 
 2. **Perhatikan class Buku pada Praktikum 1 tersebut, ada berapa atribut yang dimiliki oleh class Buku? Sebutkan apa saja atributnya!**
 
-    Jawab: Ada 4 atribut, yaitu judul, pengarang, halaman, stok, dan harga.
+    Jawab: Ada 5 atribut, yaitu judul, pengarang, halaman, stok, dan harga.
 
 3. **Ada berapa method yang dimiliki oleh class tersebut? Sebutkan apa saja methodnya!**
 
-    Jawab: Ada 4 method, yaitu tampilInformasi(), terjual(), restock(), gantiHarga().
+    Jawab: Ada 4 method, yaitu tampilInformasi(), terjual(), restock(), dan gantiHarga().
 
 4. **Perhatikan method terjual() yang terdapat di dalam class Buku. Modifikasi isi method tersebut sehingga proses pengurangan hanya dapat dilakukan jika stok masih ada (lebih besar dari 0)!**
 
@@ -50,6 +50,7 @@ Pertanyaan:
         }
     }
     ```
+    Dengan demikian, method ini akan bekerja jika jumlah stoknya lebih dari 0.
 
 5. **Menurut Anda, mengapa method restock() mempunyai satu parameter berupa bilangan int?** 
 
@@ -57,7 +58,7 @@ Pertanyaan:
 
 6. **Commit dan push kode program ke Github!**
 
-    Jawab: https://github.com/FarrelAD/AlgoritmaDanStrukturData/blob/main/Pertemuan%202/Tugas/Buku12.java
+    Jawab: https://github.com/FarrelAD/Ngampus-POLINEMA/tree/main/Semester%202/05-PRAK.%20ALGORITMA%20DAN%20STRUKUR%20DATA/Minggu%202/Tugas
 ---
 ### Percobaan 2 - Instansiasi Object, serta Mengakses Atribut dan Method
 Hasil kode yang telah dibuat:
@@ -94,16 +95,17 @@ Apa nama object yang dihasilkan?
     ```java
         bk1.judul = "Today Ends Tomorrow Comes";
     ```
-    Di situ melakukan akses terhadap atribut dan melakukan pemberian terhadap atribut yang bernama judul dengan nama "Today Ends Tomorrow Comes".
+    Di situ melakukan akses terhadap atribut dan melakukan pemberian nilai terhadap atribut yang bernama judul dengan nama "Today Ends Tomorrow Comes".
 
 3. **Mengapa hasil output pemanggilan method tampilInformasi() pertama dan kedua berbeda?**
 
-    Jawab: Karena hasil tampilInformasi() yang kedua menampilkan atribut yang telah dirubah pada baris sebelumnya. Lebih tepatnya seperti ini:
+    Jawab: Karena hasil tampilInformasi() yang kedua menampilkan atribut yang telah dirubah pada baris sebelumnya. Lebih tepatnya pada baris kode berikut:
     ```java
         bk1.tampilInformasi();
         bk1.terjual(5);
         bk1.gantiHarga(60000);
     ```
+
 
 ---
 ### Percobaan 3 - Membuat Konstruktor
@@ -181,7 +183,7 @@ Pertanyaan:
 
     Jawab: Hasil commit dan push ada di link berikut:
 
-    https://github.com/FarrelAD/AlgoritmaDanStrukturData/blob/main/Pertemuan%202/Tugas/BukuMain12.java
+    https://github.com/FarrelAD/Ngampus-POLINEMA/tree/main/Semester%202/05-PRAK.%20ALGORITMA%20DAN%20STRUKUR%20DATA/Minggu%202/Tugas
 
 ---
 ### 2.4 Latihan Praktikum
@@ -272,6 +274,7 @@ Pertanyaan:
         }
     }
     ```
+    Pada method hitungDiskon() dan hitungHargaBayar() saya memanfaatkan method yang sudah ada untuk diolah kembali dan menghasilkan nilai baru. Disini saya juga menambahkan variabel baru yang bisa diakses secara global **terjual** untuk menampung jumlah barang yang terjual dari input pengguna. 
 
 2. Membuat program berdasarkan class diagram berikut!
 
@@ -286,9 +289,12 @@ Pertanyaan:
     // JOBSHEET 2 
     // 21 Februari 2024
 
+    import java.util.Scanner;
+
     public class Dragon {
         // Below is the attribute of the Dragon class
         int x, y, width, height;
+        boolean isContinue = false;
 
 
         // Below is method for Dragon class
@@ -325,7 +331,97 @@ Pertanyaan:
         }
 
         void detectCollision(int x, int y) {
-            System.out.println("Game Over");
+            isContinue = true;
+            System.out.println("------------------------------------");
+            System.out.println("GAME OVER!");
+            System.out.println("------------------------------------");
+        }
+
+        void printPosition() {
+            System.out.printf("POSITION x: %d - y: %d\n", x, y);
+        }
+
+        public static void main(String[] args) {
+            Scanner scan = new Scanner(System.in);
+
+            Dragon myDragon = new Dragon();
+
+            System.out.print(
+                "SET UP YOUR PLAYING AREA\n" +
+                "- HEIGHT : "
+            );
+            myDragon.height = scan.nextInt();
+            System.out.print("- WIDTH : ");
+            myDragon.width = scan.nextInt();
+
+            System.out.println("------------------------------------");
+
+            do {
+                System.out.print(
+                    "PILIH ARAH!\n" +
+                    "1. KE ATAS\n" +
+                    "2. KE BAWAH\n" +
+                    "3. KE KANAN\n" +
+                    "4. KE KIRI\n" +
+                    "input> "
+                );
+                int direction = scan.nextInt();
+
+                switch (direction) {
+                    case 1:
+                        myDragon.moveUp();
+                        break;
+                    case 2:
+                        myDragon.moveDown();
+                        break;
+                    case 3:
+                        myDragon.moveRight();
+                        break;
+                    case 4:
+                        myDragon.moveLeft();
+                        break;
+                    default:
+                        break;
+                }
+                // Print the dragon position
+                myDragon.printPosition();
+                System.out.println("------------------------------------");
+            } while (!myDragon.isContinue);
         }
     }
     ```
+    Dan ini adalah contoh dari output yang dihasilkan dari program yang saya buat:
+    ```
+    SET UP YOUR PLAYING AREA
+    - HEIGHT : 3
+    - WIDTH : 2
+    ------------------------------------
+    PILIH ARAH!
+    1. KE ATAS
+    2. KE BAWAH
+    3. KE KANAN
+    4. KE KIRI
+    input> 3
+    POSITION x: 1 - y: 0
+    ------------------------------------
+    PILIH ARAH!
+    1. KE ATAS
+    2. KE BAWAH
+    3. KE KANAN
+    4. KE KIRI
+    input> 3
+    POSITION x: 2 - y: 0
+    ------------------------------------
+    PILIH ARAH!
+    1. KE ATAS
+    2. KE BAWAH
+    3. KE KANAN
+    4. KE KIRI
+    input> 3
+    ------------------------------------
+    GAME OVER!
+    ------------------------------------
+    POSITION x: 3 - y: 0
+    ------------------------------------
+    ```
+    Saya menambahkan method main agar program bisa dijalankan. Saya juga melakukan kreasi pada mekanisme permainan yaitu dengan memungkinkan pengguna untuk bisa kustom width dan height dari area permainan dan  menggunakan looping sehingga pengguna bisa melakukan permainan secara terus-menerus selagi tidak **game over**.
