@@ -4,31 +4,45 @@ public class Arrray_1 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         // Deklarasi variabel
-        int[] nilaiAngka = new int[8];
-        String[] nilaiHuruf = new String[nilaiAngka.length];
-        double[] nilaiSetara = new double[nilaiAngka.length];
+        String[] namaMatkul = new String[8];
+        int[] bobotSks = new int[namaMatkul.length];
+        int totalSks = 0;
+        int[] nilaiAngka = new int[namaMatkul.length];
+        String[] nilaiHuruf = new String[namaMatkul.length];
+        double[] nilaiSetara = new double[namaMatkul.length];
 
         // Pengguna input nilai
         System.out.println("==============================");
         System.out.println("Program Menghitung IP Semester");
         System.out.println("==============================");
-        System.out.print("Masukkan nilai angka untuk MK Pancasila : ");
-        nilaiAngka[0] = scan.nextInt();
-        System.out.print("Masukkan nilai angka untuk MK Konsep Teknologi Informasi : ");
-        nilaiAngka[1] = scan.nextInt();
-        System.out.print("Masukkan nilai angka untuk MK Critical Thinking dan Problem Solving : ");
-        nilaiAngka[2] = scan.nextInt();
-        System.out.print("Masukkan nilai angka untuk MK Matematika Dasar : ");
-        nilaiAngka[3] = scan.nextInt();
-        System.out.print("Masukkan nilai angka untuk MK Bahasa Inggris : ");
-        nilaiAngka[4] = scan.nextInt();
-        System.out.print("Masukkan nilai angka untuk MK Dasar Pemrograman : ");
-        nilaiAngka[5] = scan.nextInt();
-        System.out.print("Masukkan nilai angka untuk MK Praktikum Dasar Pemrograman : ");
-        nilaiAngka[6] = scan.nextInt();
-        System.out.print("Masukkan nilai angka untuk MK Keselamatan dan Kesehatan Kerja : ");
-        nilaiAngka[7] = scan.nextInt();
 
+        // Input nama mata kuliah
+        System.out.println("\n==============================");
+        System.out.println("Masukkan nama mata kuliah!");
+        System.out.println("==============================");
+        for (int i = 0; i < namaMatkul.length; i++) {
+            System.out.printf("Mata kuliah ke-%d : ", i+1);
+            namaMatkul[i] = scan.nextLine();
+        }
+        
+        // Input bobot SKS tiap matkul
+        System.out.println("\n==============================");
+        System.out.println("Masukkan bobot SKS tiap matkul!");
+        System.out.println("==============================");
+        for (int i = 0; i < namaMatkul.length; i++) {
+            System.out.print(namaMatkul[i] + " : ");
+            bobotSks[i] = scan.nextInt();
+            totalSks += bobotSks[i];
+        }
+
+        // Input nilai huruf tiap matkul
+        System.out.println("\n==============================");
+        System.out.println("Masukkan nilai angka!");
+        System.out.println("==============================");
+        for (int i = 0; i < namaMatkul.length; i++) {
+            System.out.print(namaMatkul[i] + " : ");
+            nilaiAngka[i] = scan.nextInt();
+        }
 
         // Proses konversi nilai
         for (int i = 0; i < nilaiAngka.length; i++) {
@@ -56,8 +70,16 @@ public class Arrray_1 {
             }
         }
 
+        // Menghitung nilai IP 
+        float totalIp = 0;
+        for (int i = 0; i < nilaiSetara.length; i++) {
+            totalIp += (nilaiSetara[i] * bobotSks[i]);
+        }
 
-        System.out.println("==============================");
+        float nilaiIp = totalIp / totalSks;
+        String nilaiIpString = String.format("%.2f", nilaiIp);
+
+        System.out.println("\n==============================");
         System.out.println("Hasil Konversi Nilai");
         System.out.println("==============================");
         System.out.println("MK\t\t\t\t\tNilai Angka\t\tNilai Huruf\t\tBobot Nilai");
@@ -69,6 +91,7 @@ public class Arrray_1 {
         System.out.println("Dasar Pemrograman\t\t\t"+nilaiAngka[5]+"\t\t\t"+nilaiHuruf[5]+"\t\t\t"+nilaiSetara[5]);
         System.out.println("Praktikum Dasar Pemrograman\t\t"+nilaiAngka[6]+"\t\t\t"+nilaiHuruf[6]+"\t\t\t"+nilaiSetara[6]);
         System.out.println("Keselamatan dan Kesehatan Kerja\t\t"+nilaiAngka[7]+"\t\t\t"+nilaiHuruf[7]+"\t\t\t"+nilaiSetara[7]);
+        System.out.println("==============================");
+        System.out.println("IP : " + nilaiIpString);
     }
-
 }
