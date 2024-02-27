@@ -205,31 +205,45 @@ public class Arrray_1 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         // Deklarasi variabel
-        int[] nilaiAngka = new int[8];
-        String[] nilaiHuruf = new String[nilaiAngka.length];
-        double[] nilaiSetara = new double[nilaiAngka.length];
+        String[] namaMatkul = new String[8];
+        int[] bobotSks = new int[namaMatkul.length];
+        int totalSks = 0;
+        int[] nilaiAngka = new int[namaMatkul.length];
+        String[] nilaiHuruf = new String[namaMatkul.length];
+        double[] nilaiSetara = new double[namaMatkul.length];
 
         // Pengguna input nilai
         System.out.println("==============================");
         System.out.println("Program Menghitung IP Semester");
         System.out.println("==============================");
-        System.out.print("Masukkan nilai angka untuk MK Pancasila : ");
-        nilaiAngka[0] = scan.nextInt();
-        System.out.print("Masukkan nilai angka untuk MK Konsep Teknologi Informasi : ");
-        nilaiAngka[1] = scan.nextInt();
-        System.out.print("Masukkan nilai angka untuk MK Critical Thinking dan Problem Solving : ");
-        nilaiAngka[2] = scan.nextInt();
-        System.out.print("Masukkan nilai angka untuk MK Matematika Dasar : ");
-        nilaiAngka[3] = scan.nextInt();
-        System.out.print("Masukkan nilai angka untuk MK Bahasa Inggris : ");
-        nilaiAngka[4] = scan.nextInt();
-        System.out.print("Masukkan nilai angka untuk MK Dasar Pemrograman : ");
-        nilaiAngka[5] = scan.nextInt();
-        System.out.print("Masukkan nilai angka untuk MK Praktikum Dasar Pemrograman : ");
-        nilaiAngka[6] = scan.nextInt();
-        System.out.print("Masukkan nilai angka untuk MK Keselamatan dan Kesehatan Kerja : ");
-        nilaiAngka[7] = scan.nextInt();
 
+        // Input nama mata kuliah
+        System.out.println("\n==============================");
+        System.out.println("Masukkan nama mata kuliah!");
+        System.out.println("==============================");
+        for (int i = 0; i < namaMatkul.length; i++) {
+            System.out.printf("Mata kuliah ke-%d : ", i+1);
+            namaMatkul[i] = scan.nextLine();
+        }
+        
+        // Input bobot SKS tiap matkul
+        System.out.println("\n==============================");
+        System.out.println("Masukkan bobot SKS tiap matkul!");
+        System.out.println("==============================");
+        for (int i = 0; i < namaMatkul.length; i++) {
+            System.out.print(namaMatkul[i] + " : ");
+            bobotSks[i] = scan.nextInt();
+            totalSks += bobotSks[i];
+        }
+
+        // Input nilai huruf tiap matkul
+        System.out.println("\n==============================");
+        System.out.println("Masukkan nilai angka!");
+        System.out.println("==============================");
+        for (int i = 0; i < namaMatkul.length; i++) {
+            System.out.print(namaMatkul[i] + " : ");
+            nilaiAngka[i] = scan.nextInt();
+        }
 
         // Proses konversi nilai
         for (int i = 0; i < nilaiAngka.length; i++) {
@@ -257,6 +271,14 @@ public class Arrray_1 {
             }
         }
 
+        // Menghitung nilai IP 
+        float totalIp = 0;
+        for (int i = 0; i < nilaiSetara.length; i++) {
+            totalIp += (nilaiSetara[i] * bobotSks[i]);
+        }
+
+        float nilaiIp = totalIp / totalSks;
+        String nilaiIpString = String.format("%.2f", nilaiIp);
 
         System.out.println("==============================");
         System.out.println("Hasil Konversi Nilai");
@@ -270,8 +292,9 @@ public class Arrray_1 {
         System.out.println("Dasar Pemrograman\t\t\t"+nilaiAngka[5]+"\t\t\t"+nilaiHuruf[5]+"\t\t\t"+nilaiSetara[5]);
         System.out.println("Praktikum Dasar Pemrograman\t\t"+nilaiAngka[6]+"\t\t\t"+nilaiHuruf[6]+"\t\t\t"+nilaiSetara[6]);
         System.out.println("Keselamatan dan Kesehatan Kerja\t\t"+nilaiAngka[7]+"\t\t\t"+nilaiHuruf[7]+"\t\t\t"+nilaiSetara[7]);
+        System.out.println("==============================");
+        System.out.println("IP : " + nilaiIpString);
     }
-
 }
 ```
 
@@ -281,14 +304,42 @@ Variasi 1
 ==============================
 Program Menghitung IP Semester
 ==============================
-Masukkan nilai angka untuk MK Pancasila : 75
-Masukkan nilai angka untuk MK Konsep Teknologi Informasi : 85
-Masukkan nilai angka untuk MK Critical Thinking dan Problem Solving : 70
-Masukkan nilai angka untuk MK Matematika Dasar : 85
-Masukkan nilai angka untuk MK Bahasa Inggris : 85
-Masukkan nilai angka untuk MK Dasar Pemrograman : 62
-Masukkan nilai angka untuk MK Praktikum Dasar Pemrograman : 62
-Masukkan nilai angka untuk MK Keselamatan dan Kesehatan Kerja : 85
+
+==============================
+Masukkan nama mata kuliah!
+==============================
+Mata kuliah ke-1 : Pancasila
+Mata kuliah ke-2 : Konsep Teknologi Informasi
+Mata kuliah ke-3 : Critical Thinking and Problem Solving
+Mata kuliah ke-4 : Matematika Dasar
+Mata kuliah ke-5 : Bahasa Inggris
+Mata kuliah ke-6 : Dasar Pemrograman
+Mata kuliah ke-7 : Praktikum Dasar Pemrograman
+Mata kuliah ke-8 : Keselamatan dan Kesehatan Kerja
+
+==============================
+Masukkan bobot SKS tiap matkul!
+==============================
+Pancasila : 2
+Konsep Teknologi Informasi : 2
+Critical Thinking and Problem Solving : 2
+Matematika Dasar : 3
+Bahasa Inggris : 2
+Dasar Pemrograman : 2
+Praktikum Dasar Pemrograman : 3
+Keselamatan dan Kesehatan Kerja : 2
+
+==============================
+Masukkan nilai angka!
+==============================
+Pancasila : 75
+Konsep Teknologi Informasi : 85
+Critical Thinking and Problem Solving : 70
+Matematika Dasar : 85
+Bahasa Inggris : 85
+Dasar Pemrograman : 62
+Keselamatan dan Kesehatan Kerja : 85
+
 ==============================
 Hasil Konversi Nilai
 ==============================
@@ -301,34 +352,13 @@ Bahasa Inggris                          85                      A               
 Dasar Pemrograman                       62                      C+                      2.5
 Praktikum Dasar Pemrograman             62                      C+                      2.5
 Keselamatan dan Kesehatan Kerja         85                      A                       4.0
+==============================
+IP : 3.42
 ```
+**Penjelasan**
 
-Variasi 2
-```
-==============================
-Program Menghitung IP Semester
-==============================
-Masukkan nilai angka untuk MK Pancasila : 43  
-Masukkan nilai angka untuk MK Konsep Teknologi Informasi : 78
-Masukkan nilai angka untuk MK Critical Thinking dan Problem Solving : 45
-Masukkan nilai angka untuk MK Matematika Dasar : 90
-Masukkan nilai angka untuk MK Bahasa Inggris : 76
-Masukkan nilai angka untuk MK Dasar Pemrograman : 89
-Masukkan nilai angka untuk MK Praktikum Dasar Pemrograman : 68
-Masukkan nilai angka untuk MK Keselamatan dan Kesehatan Kerja : 34
-==============================
-Hasil Konversi Nilai
-==============================
-MK                                      Nilai Angka             Nilai Huruf             Bobot Nilai
-Pancasila                               43                      D                       1.0
-Konsep Teknologi Informasi              78                      B+                      3.5
-Critical Thinking dan Problem Solving   45                      D                       1.0
-Matematika Dasar                        90                      A                       4.0
-Bahasa Inggris                          76                      B+                      3.5
-Dasar Pemrograman                       89                      A                       4.0
-Praktikum Dasar Pemrograman             68                      B                       3.0
-Keselamatan dan Kesehatan Kerja         34                      E                       0.0
-```
+Disini saya membuat program dengan bisa membuat pengguna bisa input manual nama mata kuliah, bobot SKS tiap matkul, dan nilai angka. Kemudian, nilai tersebut akan dikonversi ke nilai huruf, dan nilai setara. 
+
 
 ---
 ### Fungsi
