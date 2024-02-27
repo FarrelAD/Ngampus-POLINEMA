@@ -18,6 +18,8 @@ Kelas: TI-1B
 
 ---
 ### Percobaan 1 - Deklarasi Class, Atribut dan Method
+Full kode program yang telah dibuat bisa klik link berikut: [disini](https://github.com/FarrelAD/Ngampus-POLINEMA/blob/main/Semester%202/05-PRAK.%20ALGORITMA%20DAN%20STRUKUR%20DATA/Minggu%202/Tugas/Buku12.java)
+
 Hasil awal code:
 ```
 Error: Main method not found in class Buku12, please define the main method as:
@@ -61,6 +63,8 @@ Pertanyaan:
     Jawab: https://github.com/FarrelAD/Ngampus-POLINEMA/tree/main/Semester%202/05-PRAK.%20ALGORITMA%20DAN%20STRUKUR%20DATA/Minggu%202/Tugas
 ---
 ### Percobaan 2 - Instansiasi Object, serta Mengakses Atribut dan Method
+Full kode program yang telah dibuat bisa klik link berikut: [disini](https://github.com/FarrelAD/Ngampus-POLINEMA/blob/main/Semester%202/05-PRAK.%20ALGORITMA%20DAN%20STRUKUR%20DATA/Minggu%202/Tugas/BukuMain12.java)
+
 Hasil kode yang telah dibuat:
 ```
 Judul : Today Ends Tomorrow Comes
@@ -109,6 +113,8 @@ Apa nama object yang dihasilkan?
 
 ---
 ### Percobaan 3 - Membuat Konstruktor
+Full kode program bisa diakses pada link berikut: [file_pertama](https://github.com/FarrelAD/Ngampus-POLINEMA/blob/main/Semester%202/05-PRAK.%20ALGORITMA%20DAN%20STRUKUR%20DATA/Minggu%202/Tugas/Buku12.java) dan [file_kedua](https://github.com/FarrelAD/Ngampus-POLINEMA/blob/main/Semester%202/05-PRAK.%20ALGORITMA%20DAN%20STRUKUR%20DATA/Minggu%202/Tugas/BukuMain12.java)
+
 Hasil kode yang dibuat:
 ```
 Judul : Today Ends Tomorrow Comes
@@ -195,7 +201,7 @@ Pertanyaan:
     | judul: String <br> pengarang: String <br> halaman: int <br> stok: int <br> harga: int |
     | tampilInformasi(): void <br> terjual(jml: int) : void <br> restock(n: int) : void <br> gantiHarga(hrg: int) : int <br> hitungHargaTotal(): void <br> hitungDiskon(): int <br> hitungHargaBayar(): void |
 
-    Jawab: Hasil full code dari file **Buku.java**
+    Jawab: Hasil full code dari file [**Buku.java**](https://github.com/FarrelAD/Ngampus-POLINEMA/blob/main/Semester%202/05-PRAK.%20ALGORITMA%20DAN%20STRUKUR%20DATA/Minggu%202/Tugas/Buku12.java)
     ```java
     // PRAKTIKUM ALGORITMA DAN STRUKTUR DATA
     // JOBSHEET 2 
@@ -283,7 +289,7 @@ Pertanyaan:
     | x: int <br> y: int <br> width: int <br> height: int |
     | moveLeft(): void <br> moevRight(): void <br> moveUp(): void <br> moveDown(): void <br> printPosition(): void <br> detectCollision(x: int, y: int): void <br> 
 
-    Jawab: Hasil full code dari file **Dragon.java**
+    Jawab: Hasil full code dari file [**Dragon.java**](https://github.com/FarrelAD/Ngampus-POLINEMA/blob/main/Semester%202/05-PRAK.%20ALGORITMA%20DAN%20STRUKUR%20DATA/Minggu%202/Tugas/Dragon.java)
     ```java
     // PRAKTIKUM ALGORITMA DAN STRUKTUR DATA
     // JOBSHEET 2 
