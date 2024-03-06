@@ -40,7 +40,7 @@ public class Main12 {
 
         // Proses input panjang jari-jari dan sisi miring kerucut
         for (int i = 0; i < krc.length; i++) {
-            // Proses input dengan konstruktor berparameter
+            // Proses input tanpa konstruktor berparameter
             // krc[i] = new Kerucut12();
             // System.out.println("Kerucut ke-" + (i+1));
             // System.out.print("Masukkan panjang jari-jari: ");
