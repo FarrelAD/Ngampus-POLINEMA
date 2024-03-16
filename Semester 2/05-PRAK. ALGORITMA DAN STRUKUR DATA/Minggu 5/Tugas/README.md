@@ -247,7 +247,7 @@ Total keuntungan perusahaan selama 5 bulan adalah = 40.339999999999996
 
     Jawab: Proram yang saya buat ada pada [link ini (MainSum.java)](./src/minggu5/MainSum.java) dan [link ini (Sum.java)](./src/minggu5/Sum.java)
 
-
+---
 ### Latihan Praktikum
 Sebuah showroom memiliki daftar mobil dengan data sesuai tabel di bawah ini:
 | merk | tipe | tahun | top_acceleration | top_power |
