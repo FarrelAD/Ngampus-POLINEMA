@@ -91,7 +91,7 @@ Hasil perhitungan faktorial menggunakan Divide and Conquer adalah: 6
     Hasil perhitungan faktorial menggunakan Divide and Conquer adalah: 6
     ```
 
-3. Jelaskna perbedaan antara **fakto *= i*** dan **int fakto = n * faktorialDC(n-1)**!
+3. Jelaskan perbedaan antara **fakto *= i*** dan **int fakto = n * faktorialDC(n-1)**!
 
     Jawab: **fakto *= i*** akan melakukan operasi perhitungan nilai faktor yang ada dengan nilai yang menjadi variabel **i**. Sedangkan untuk **int fakto = n * faktorialDC(n-1)**, merupakan operasi yang dilakukan agar fungsi rekursif bekerja. Jadi nilai dari **fakto** merupakan nilai dari **n** dikali dengan hasil fungsi **faktorialDC(n-1)**
 
@@ -245,7 +245,7 @@ Total keuntungan perusahaan selama 5 bulan adalah = 40.339999999999996
 
 3. Program perhitungan keuntungan suatu perusahaan ini hanya untuk satu perusahaan saja. Bagaiamana cara menghitung sekaligus keuntungan beberapa bulan untuk beberapa perusahaan? (Setiap perusahaan bisa saja memiliki jumlah bulan berbeda-beda). Buktikan dengan program!
 
-    Jawab: Proram yang saya buat ada pada [link ini (MainSum.java)](./src/minggu5/MainSum.java) dan [link ini (Sum.java)](./src/minggu5/Sum.java)
+    Jawab: Proram yang saya buat ada pada [link ini (MainSum.java)](./src%20%5BMY%20CODES%20ARE%20HERE%5D/minggu5/MainSum.java) dan [link ini (Sum.java)](./src%20%5BMY%20CODES%20ARE%20HERE%5D/minggu5/Sum.java)
 
 ---
 ### Latihan Praktikum
@@ -271,7 +271,7 @@ c. Rata-rata top_power dari seluruh mobil menggunakan Brute Force!
 
 Jawab:
 
-a. Program yang saya buat lebih lengkapnya ada pada link berikut [klik aku](../src/latihan_praktikum/).
+a. Program yang saya buat lebih lengkapnya ada pada link berikut [klik aku](../src%20%5BMY%20CODES%20ARE%20HERE%5D/latihan_praktikum/).
 Saya membuat method baru yang fungsinya untuk mencari nilai tertinggidari data **top_acceleration**
 ```java
 static int cariTopAccelerationTertinggi(int topAccelera[], int l, int r) {
@@ -296,7 +296,7 @@ Untuk outputnya akan seperti ini:
 Top Acceleration tertinggi (DIVIDE AND CONQUER): 6816
 ```
 
-b. Program yang saya buat lebih lengkapnya ada pada link berikut [klik aku](./src/latihan_praktikum/).
+b. Program yang saya buat lebih lengkapnya ada pada link berikut [klik aku](./src%20%5BMY%20CODES%20ARE%20HERE%5D/latihan_praktikum).
 Sama seperti sebelumnya, tapi untuk pengkondisiannya saya balik. 
 
 ```java
@@ -334,7 +334,7 @@ Top Acceleration terendah (DIVIDE AND CONQUER): 3700
 ```
 
 c. Menghitung rata-rata **top_power**
-Program yang saya buat bisa dilihat pada link berikut [klik aku](./src/latihan_praktikum/MainShowroom.java)
+Program yang saya buat bisa dilihat pada link berikut [klik aku](./src%20%5BMY%20CODES%20ARE%20HERE%5D/latihan_praktikum/MainShowroom.java)
 Untuk spesifiknya sebagai berikut:
 
 ```java
