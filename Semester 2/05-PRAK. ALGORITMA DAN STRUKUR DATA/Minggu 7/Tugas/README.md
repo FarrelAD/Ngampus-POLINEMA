@@ -369,6 +369,7 @@ Data awal:
 Setelah diurutkan: 
 10 20 30 40 50 70 90 100 
 ```
+Lebih lengkapnya pada link berikut [klik aku](TestSearching/src%20[MY%20CODES%20ARE%20HERE]/P5/)
 
 ---
 ### Latihan Praktikum
