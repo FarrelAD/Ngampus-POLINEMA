@@ -3,7 +3,7 @@ package P7;
 public class PencarianBuku12 {
     Buku12 listBk[] = new Buku12[5];
     int idx;
-    // int posisiKiri = -1, posisiKanan = -1;
+
 
     void tambah(Buku12 m) {
         if (idx < listBk.length) {
@@ -142,6 +142,29 @@ public class PencarianBuku12 {
         return -1;
     }
 
+    // public int findBinarySearchJudulBuku(String cari, int left, int right) {
+    //     insertionSort();
+
+    //     int mid;
+    //     if (right >= left) {
+    //         mid = (right + left) / 2;
+    //         if (cari.equalsIgnoreCase(listBk[mid].judulBuku)) {
+    //             return mid;
+    //         } else {
+    //             int posisiKiri = findBinarySearchJudulBuku(cari, left, mid - 1);
+    //             int posisiKanan = findBinarySearchJudulBuku(cari, mid + 1, right);
+
+    //             if (posisiKanan != -1) {
+    //                 return posisiKanan;
+    //             } else if (posisiKiri != -1) {
+    //                 return posisiKiri;
+    //             }
+    //         }
+    //     }
+    //     return -1;
+    // }
+
+    // Modifikasi binary search sehingga bisa memunculkan peringatan terdapat duplikasi data
     public int findBinarySearchJudulBuku(String cari, int left, int right) {
         insertionSort();
 
@@ -149,6 +172,15 @@ public class PencarianBuku12 {
         if (right >= left) {
             mid = (right + left) / 2;
             if (cari.equalsIgnoreCase(listBk[mid].judulBuku)) {
+                // Cari data lain lain yang mungkin sama
+                int posisiKiri = findBinarySearchJudulBuku(cari, left, mid - 1);
+                int posisiKanan = findBinarySearchJudulBuku(cari, mid + 1, right);
+
+                // Jika nilai 'posisiKanan' atau 'posisiKiri' tidak -1, berarti ada data lain yang ditemukan di indeks tertentu
+                // Maka dari itu, kode di bawah ini yang menyatakan adanya duplikasi data
+                if (posisiKanan != -1 || posisiKiri != -1) {
+                    tampilDitemukanJudulSama();
+                }
                 return mid;
             } else {
                 int posisiKiri = findBinarySearchJudulBuku(cari, left, mid - 1);

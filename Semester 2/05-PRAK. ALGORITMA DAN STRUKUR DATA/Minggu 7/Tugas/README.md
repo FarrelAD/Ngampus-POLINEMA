@@ -911,12 +911,58 @@ Lebih lengkapnya pada link berikut [klik aku](TestSearching/src%20[MY%20CODES%20
             System.out.println("TERDAPAT LEBIH DARI 1 BUKU DENGAN JUDUL SAMA");
         }
         ```
+        Mekanisme dari modifikasi saya pada method **findJudulBuku** tersebut adalah akan menambahkan nilai ke **jumlahBukuDitemukan** jika terdapat data yang sesuai dengan yang dicari. Jika nilai dari **jumlahBukuDitemukan** lebih dari 1, berarti hasil pencarian mendapati data dengan judul yang sama. 
+
+        Selain itu, method **findBinarySearchJudulBuku** saya juga melakukan sedikit perubahan:
+        ```java
+        // Modifikasi binary search sehingga bisa memunculkan peringatan terdapat duplikasi data
+        public int findBinarySearchJudulBuku(String cari, int left, int right) {
+            insertionSort();
+
+            int mid;
+            if (right >= left) {
+                mid = (right + left) / 2;
+                if (cari.equalsIgnoreCase(listBk[mid].judulBuku)) {
+                    // Cari data lain lain yang mungkin sama
+                    int posisiKiri = findBinarySearchJudulBuku(cari, left, mid - 1);
+                    int posisiKanan = findBinarySearchJudulBuku(cari, mid + 1, right);
+
+                    // Jika nilai 'posisiKanan' atau 'posisiKiri' tidak -1, berarti ada data lain yang ditemukan di indeks tertentu
+                    // Maka dari itu, kode di bawah ini yang menyatakan adanya duplikasi data
+                    if (posisiKanan != -1 || posisiKiri != -1) {
+                        tampilDitemukanJudulSama();
+                    }
+                    return mid;
+                } else {
+                    int posisiKiri = findBinarySearchJudulBuku(cari, left, mid - 1);
+                    int posisiKanan = findBinarySearchJudulBuku(cari, mid + 1, right);
+
+                    if (posisiKanan != -1) {
+                        return posisiKanan;
+                    } else if (posisiKiri != -1) {
+                        return posisiKiri;
+                    }
+                }
+            }
+            return -1;
+        }
+        ```
+        Mekanismenya adalah, ketika sudah menemukan data yang sesuai dengan yang dicari, maka tidak akan langsung *return* terlebih dahulu. Program akan mengecek apakah hanya data ini saja yang sesuai dengan data yang ingin dicari pengguna (Caranya masih sama dengan rekursif function). Jika sebelumnya saya menggunakan proses incremental variable ketika terdapat data yang sesuai dicari, pada binary search kali ini saya menggunakan pengecekan nilai dari hasil **posisiKiri** dan **posisiKanan**. Secara default, jika tidak ditemukan data yang sesuai maka nilai dari **posisiKiri** atau **posisiKanan** adalah -1. Tapi jika data ditemukan, maka akan mengembalikan data sesuai indeks data yang ditemukan. Dengan demikian memenuhi syarat kondisi yang ada pada kode berikut:
+        ```java
+        if (posisiKanan != -1) {
+            return posisiKanan;
+        } else if (posisiKiri != -1) {
+            return posisiKiri;
+        }
+        ```
+        Akhirnya program akan memberikan peringatan bahwa terdapat data yang duplikat.
+
         Untuk output yang ditampilkan akan seperti ini:
         ```
         ======================================================
         Masukkan data buku secara urut dari kode buku terkecil! : 
         ======================================================
-        - Kode buku     : ASM 
+        - Kode buku     : ASM
         - Judul buku    : Algoritma
         - Tahun terbit  : 2019
         - Pengarang     : Wahyudi
@@ -996,6 +1042,7 @@ Lebih lengkapnya pada link berikut [klik aku](TestSearching/src%20[MY%20CODES%20
         Stock   : 19
         =========================================================
         Menggunakan Binary Search
+        TERDAPAT LEBIH DARI 1 BUKU DENGAN JUDUL SAMA
         Data: Algoritma ditemukan pada indeks 0
         ======================================
         - Kode buku     : ASM
@@ -1004,4 +1051,3 @@ Lebih lengkapnya pada link berikut [klik aku](TestSearching/src%20[MY%20CODES%20
         - Pengarang     : Wahyudi
         Stock   : 90
         ```
-
