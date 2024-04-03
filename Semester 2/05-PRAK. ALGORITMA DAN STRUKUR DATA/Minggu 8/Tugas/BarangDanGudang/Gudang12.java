@@ -1,3 +1,5 @@
+package BarangDanGudang;
+
 public class Gudang12 {
     Barang12[] tumpukan;
     int size, top;
@@ -83,7 +85,7 @@ public class Gudang12 {
 
     public String konersiDesimalKeBiner(int kode) {
         StackKonversi12 stack = new StackKonversi12();
-        while (kode > 0) {
+        while (kode != 0) {
             int sisa = kode % 2;
             stack.push(sisa);
             kode = kode / 2;

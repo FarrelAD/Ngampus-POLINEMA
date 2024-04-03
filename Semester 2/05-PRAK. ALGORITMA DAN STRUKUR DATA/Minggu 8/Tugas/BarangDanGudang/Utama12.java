@@ -1,3 +1,5 @@
+package BarangDanGudang;
+
 import java.util.Scanner;
 
 public class Utama12 {

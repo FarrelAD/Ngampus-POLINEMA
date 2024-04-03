@@ -1,3 +1,5 @@
+package BarangDanGudang;
+
 public class StackKonversi12 {
     int size, top;
     int[] tumpukanBiner;

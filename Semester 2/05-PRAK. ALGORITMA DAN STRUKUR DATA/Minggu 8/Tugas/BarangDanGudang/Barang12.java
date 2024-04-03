@@ -1,3 +1,5 @@
+package BarangDanGudang;
+
 public class Barang12 {
     int kode;
     String nama, kategori;
