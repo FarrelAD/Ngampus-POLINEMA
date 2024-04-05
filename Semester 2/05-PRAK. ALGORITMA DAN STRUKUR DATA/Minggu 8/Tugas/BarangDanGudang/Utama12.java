@@ -3,8 +3,8 @@ package BarangDanGudang;
 import java.util.Scanner;
 
 public class Utama12 {
+    static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
 
         // Gudang12 gudang = new Gudang12(7);
 
@@ -22,9 +22,11 @@ public class Utama12 {
                 "MENU\n" +
                 "   1. Tambah barang\n" +
                 "   2. Ambil barang\n" +
-                "   3. Lihat barang teratas\n" +
-                "   4. Tampilkan tumpukan barang\n" +
-                "   5. Keluar\n" +
+                "   3. Cari barang\n" + 
+                "   4. Lihat barang teratas\n" +
+                "   5. Lihat barang terbawah\n" +
+                "   6. Tampilkan tumpukan barang\n" +
+                "   7. Keluar\n" +
                 "Pilih operasi: "
             );
             int pilihan = scanner.nextInt();
@@ -46,18 +48,51 @@ public class Utama12 {
                     gudang.ambilBarang12();
                     break;
                 case 3:
-                    gudang.lihatBarangTeratas();
+                    cariDataBarang(gudang);
                     break;
                 case 4:
-                    gudang.tampilkanBarang();
+                    gudang.lihatBarangTeratas();
                     break;
                 case 5:
+                    gudang.lihatBarangTerbawah();
+                    break;
+                case 6:
+                    gudang.tampilkanBarang();
+                    break;
+                case 7:
                     System.exit(0);
                     break;
                 default:
                     System.out.println("Pilihan anda tidak valid. Silakan coba lagi!");
                     break;
             }
+        }
+    }
+
+    private static void cariDataBarang(Gudang12 gudang) {
+        System.out.print(
+            "Pilih opsi berikut: \n" +
+            "   1. Berdasarkan kode\n" +
+            "   2. Berdasarkan nama\n" +
+            ">>> "
+        );
+        int pilihan = scanner.nextInt();
+        scanner.nextLine();
+
+        switch (pilihan) {
+            case 1:
+                System.out.print("Masukkan kode barang yang ingin dicari: ");
+                int kodeCari = scanner.nextInt();
+                gudang.cariBarangKode(kodeCari);
+                break;
+            case 2:
+                System.out.print("Masukkan nama barang yang ingin dicari: ");
+                String namaCari = scanner.nextLine();
+                gudang.cariBarangNama(namaCari);
+                break;
+            default:
+                System.out.println("Pilihan anda tidak valid. Silakan coba lagi!");
+                break;
         }
     }
 }

@@ -50,15 +50,132 @@ public class Gudang12 {
         }
     }
 
+    public Barang12 cariBarangKode(int kodeDicari) {
+        if (!cekKosong()) {
+            Barang12 tumpukanSementara[] = new Barang12[size];
+            Barang12 barangDicari = null;
+
+            // Proses 'pop' sekaligus pencarian data yang diinginkan
+            for (int i = top; i >= 0; i--) {                
+                if (tumpukan[i].kode == kodeDicari) {
+                    barangDicari = tumpukan[i];
+                    break;
+                }
+                tumpukanSementara[i] = pop();
+            }
+
+            // Mengembalikan data yang telah di-'pop' ke tempat semula
+            for (int i = 0; i < tumpukanSementara.length; i++) {
+                if (tumpukanSementara[i] != null) {
+                    push(tumpukanSementara[i]);
+                }
+            }
+
+            if (barangDicari != null) {
+                System.out.println(
+                    "Barang yang dicari: \n" +
+                    "   - Kode : " + barangDicari.kode +
+                    "\n   - Nama : " + barangDicari.nama + 
+                    "\n   - Kategori : " + barangDicari.kategori
+                );
+                return barangDicari;
+            } else {
+                System.out.println("Data tidak ditemukan!");
+                return null;
+            }
+        } else {
+            System.out.println("Tumpukan barang kosong!");
+            return null;
+        }
+    }
+
+    public Barang12 cariBarangNama(String namaDicari) {
+        if (!cekKosong()) {
+            Barang12 tumpukanSementara[] = new Barang12[size];
+            Barang12 barangDicari = null;
+
+            // Proses 'pop' sekaligus pencarian data yang diinginkan
+            for (int i = top; i >= 0; i--) {               
+                if (tumpukan[i].nama.equalsIgnoreCase(namaDicari)) {
+                    barangDicari = tumpukan[i];
+                    break;
+                }
+                tumpukanSementara[i] = pop();
+            }
+
+            // Mengembalikan data yang telah di-'pop' ke tempat semula
+            for (int i = 0; i < tumpukanSementara.length; i++) {
+                if (tumpukanSementara[i] != null) {
+                    push(tumpukanSementara[i]);
+                }
+            }
+
+            if (barangDicari != null) {
+                System.out.println(
+                    "Barang yang dicari: \n" +
+                    "   - Kode : " + barangDicari.kode +
+                    "\n   - Nama : " + barangDicari.nama + 
+                    "\n   - Kategori : " + barangDicari.kategori
+                );
+                return barangDicari;
+            } else {
+                System.out.println("Data tidak ditemukan!");
+                return null;
+            }
+        } else {
+            System.out.println("Tumpukan barang kosong!");
+            return null;
+        }
+    }
+
     public Barang12 lihatBarangTeratas() {
         if (!cekKosong()) {
             Barang12 barangTeratas = tumpukan[top];
-            System.out.printf("\nBarang teratas %s ", barangTeratas.nama);
+            System.out.printf("\nBarang teratas:  %s", barangTeratas.nama);
             return barangTeratas;
         } else {
             System.out.println("Tumpukan barang kosong!");
             return null;
         }
+    }
+
+    public Barang12 lihatBarangTerbawah() {
+        if (!cekKosong()) {
+            Barang12 tumpukanSementara[] = new Barang12[size];
+            Barang12 barangTerbawah = null;
+
+            // Melakukan proses 'pop' agar bisa tahu data pertama
+            for (int i = top; i >= 0; i--) {
+                if (i == 0) {
+                    barangTerbawah = tumpukan[i];
+                }
+                tumpukanSementara[i] = pop();
+            }
+
+            // Mengembalikan data yang telah di 'pop'
+            for (int i = 0; i < tumpukanSementara.length; i++) {
+                if (tumpukanSementara[i] != null) {
+                    push(tumpukanSementara[i]);
+                }
+            }
+            System.out.println("Cek kepenuhan: " + cekPenuh());
+            System.out.printf("\nBarang terbawah: %s", barangTerbawah.nama);
+            return barangTerbawah;
+        } else {
+            System.out.println("Tumpukan barang kosong!");
+            return null;
+        }
+    }
+
+    public Barang12 pop() {
+        Barang12 item = tumpukan[top];
+        top--;
+        return item;
+    }
+
+    public void push(Barang12 data) {
+        top++;
+        tumpukan[top] = data;
     }
 
     public void tampilkanBarang() {
