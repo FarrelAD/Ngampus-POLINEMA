@@ -38,7 +38,7 @@ public class Buku12 {
         // stok -= jml;
 
         // Modified code
-        terjual = jml;
+        terjual += jml;
         if (stok > 0) {
             stok -= jml;
         }
@@ -62,7 +62,7 @@ public class Buku12 {
     int hitungDiskon() {
         if (hitungHargaTotal() > 150000) {
             return (int) (hitungHargaTotal() * 0.12);
-        } else if (hitungHargaTotal() == 75000 || hitungHargaTotal() == 150000) {
+        } else if (hitungHargaTotal() >= 75000 && hitungHargaTotal() <= 150000) {
             return (int) (hitungHargaTotal() * 0.05);
         } else {
             return 0;

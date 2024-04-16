@@ -27,5 +27,8 @@ public class BukuMain12 {
         Buku12 bukuFarrel = new Buku12("Atomic Habits", "James Clear", 352, 9, 85000);
         bukuFarrel.terjual(3);
         bukuFarrel.tampilInformasi();
+
+        bukuFarrel.terjual(5);
+        bukuFarrel.tampilInformasi();
     }
 }
