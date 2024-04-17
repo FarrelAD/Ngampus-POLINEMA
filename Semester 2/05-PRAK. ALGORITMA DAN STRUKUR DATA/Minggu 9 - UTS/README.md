@@ -3,7 +3,7 @@
 # Laporan Praktikum Algoritma dan Struktur Data
 ## Pertemuan 7
 
-<img src="../../../../assets/logo-polinema.png" align="center" width="200px">
+<img src="../../../assets/logo-polinema.png" align="center" width="200px">
 
 \
 Nama: Farrel Augusta Dinata
