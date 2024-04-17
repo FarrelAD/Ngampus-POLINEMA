@@ -1,7 +1,7 @@
 <div align="center">
 
 # Laporan Praktikum Algoritma dan Struktur Data
-## Pertemuan 7
+## UTS Semester 2
 
 <img src="../../../assets/logo-polinema.png" align="center" width="200px">
 
@@ -17,7 +17,7 @@ Kelas: TI-1B
 </div>
 
 ---
-## Laporan UTS
+## Contoh Output
 Hasil output yang didapat:
 ```powershell
 1 43 50 6 26 5 21 10 24 6 25 4 8 27 18 46 36 
