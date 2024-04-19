@@ -184,7 +184,6 @@ Data: 126 ditemukan pada indeks 3
 - Pengarang     : Pustaka Adi
 Stock   : 2
 ```
-Dari percobaan ini saya memodifikasi
 
 **Pertanyaan**
 
