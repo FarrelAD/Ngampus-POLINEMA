@@ -65,6 +65,7 @@ Verifikasi hasil output dari program yang telah dibuat:
     Jawab: Hasil yang dihasilkan dari program yang dibuat:
 
     ![Bukti hasil tugas akhir 1](img/bukti-tugas-akhir1.png)
+    
     Untuk detil program yang saya buat bisa cek di link berikut: [Klik aku](TugasAkhir/Nomor1/)
 
     Alur penambahan data yang saya lakukan adalah menggunakan method `addFirst` dengan nilai `[112, "Prita"]`. Kemudian saya menggunakan kembali `addFirst` untuk data `[111, "Anton"]`. Data tersebut akan menggeser nilai `head` yang semula ada di nim: 112 menjadi 111.
