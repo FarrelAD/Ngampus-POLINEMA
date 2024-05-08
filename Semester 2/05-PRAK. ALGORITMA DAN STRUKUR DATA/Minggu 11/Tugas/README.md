@@ -19,6 +19,7 @@ Kelas: TI-1B
 ---
 ## Percobaan 1
 Verifikasi hasil dari program yang telah dibuat:
+
 ![Bukti percobaan 1](img/bukti-percobaan1.png)
 
 **Pertanyaan:**
@@ -55,13 +56,14 @@ Verifikasi hasil output dari program yang telah dibuat:
         temp.next = temp.next.next;
     }
     ```
-    Jawab: Kode tersebut berfungsi memperbarui nilai `temp.next` sesuai dengan `temp.next.next`.
+    Jawab: Kode tersebut berfungsi memperbarui nilai `temp.next` sesuai dengan `temp.next.next`. Jadi, nilai yang sudah ada di `temp.next` akan tergantikan dengan data di `temp.next.next`.
 
 ---
 ## Tugas
 1. Implementasikan ilustrasi linked list berikut! Gunakan 4 macam penambahan data yang telah dipelajari sebelumnya untuk menginputkan data!
 
     Jawab: Hasil yang dihasilkan dari program yang dibuat:
+
     ![Bukti hasil tugas akhir 1](img/bukti-tugas-akhir1.png)
     Untuk detil program yang saya buat bisa cek di link berikut: [Klik aku](TugasAkhir/Nomor1/)
 
