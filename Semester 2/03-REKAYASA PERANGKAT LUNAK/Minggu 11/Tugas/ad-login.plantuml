@@ -1,0 +1,19 @@
+@startuml
+
+| User |
+start
+: Login;
+if (punya akun?) then (true)
+else (false)
+    repeat
+    : Daftar akun pengguna;
+    | Spotify app |
+    : Verifikasi akun baru;
+    repeat while (data sesuai?) is (false)
+    -> true;
+endif
+| User |
+: Halaman dashboard;
+stop
+
+@enduml

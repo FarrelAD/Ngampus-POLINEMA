@@ -1,0 +1,20 @@
+@startuml
+
+| User |
+start
+: Klik tombol berlangganan;
+| Spotify App |
+: Memberikan opsi paket langganan;
+| User |
+: Memilih paket langganan;
+: Memilih opsi pembayaran;
+| Spotify App |
+repeat
+    : Verifikasi pembayaran;
+repeat while (pembayaran valid?) is (true)
+: Memberikan fitur premium;
+| User |
+: Akses fitur premium;
+stop
+
+@enduml

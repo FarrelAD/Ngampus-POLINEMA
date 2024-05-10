@@ -1,0 +1,13 @@
+@startuml
+
+| User |
+start
+: Cari konten;
+: Filter pencarian;
+| Spotify App |
+: Menampilkan konten;
+| User |
+: Memilih konten;
+: Memutar lagu;
+stop
+@enduml
