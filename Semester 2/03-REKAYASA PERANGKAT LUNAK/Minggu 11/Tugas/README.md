@@ -3,69 +3,19 @@
 ## Activity diagram
 > You can see all the activity diagrams in this link [klik me!](Activity%20diagram%20of%20Spotify/plantuml-code)
 ### Login
-```plantuml
-@startuml
+![Activity diagram - login](Activity%20diagram%20of%20Spotify/img/ad-login.png)
 
-| User |
-start
-: Login;
-if (punya akun?) then (true)
-else (false)
-    repeat
-    : Daftar akun pengguna;
-    | Spotify app |
-    : Verifikasi akun baru;
-    repeat while (data sesuai?) is (false)
-    -> true;
-endif
-| User |
-: Halaman dashboard;
-stop
-
-@enduml
-```
-
-
-### Search content
-```plantuml
-@startuml
-
-| User |
-start
-: Cari konten;
-: Filter pencarian;
-| Spotify App |
-: Menampilkan konten;
-| User |
-: Memilih konten;
-: Memutar lagu;
-stop
-@enduml
-```
+### Search Content
+![Activity diagram - search-konten](Activity%20diagram%20of%20Spotify/img/ad-cari-konten.png)
 
 ### Subscription
-```plantuml
-@startuml
+![Activity diagram - subscription](Activity%20diagram%20of%20Spotify/img/ad-berlangganan.png)
 
-| User |
-start
-: Klik tombol berlangganan;
-| Spotify App |
-: Memberikan opsi paket langganan;
-| User |
-: Memilih paket langganan;
-: Memilih opsi pembayaran;
-| Spotify App |
-repeat
-    : Verifikasi pembayaran;
-repeat while (pembayaran valid?) is (true)
-: Memberikan fitur premium;
-| User |
-: Akses fitur premium;
-stop
+### Profile Management
+![Activity diagram - profile management](Activity%20diagram%20of%20Spotify/img/ad-manajemen-profil.png)
 
-@enduml
-```
+### Create Playlist
+![Activity diagram - create a playlist](Activity%20diagram%20of%20Spotify/img/ad-playlist.png)
 
 ---
 ## Sequence Diagram
