@@ -1,0 +1,16 @@
+@startuml
+
+| User |
+start
+: Memilih opsi manajemen profil;
+repeat
+: Memasukkan data-data baru;
+| Spotify App |
+: Sistem verifikasi data terbaru;
+| User |
+: Memasukkan data-data baru yang ingin dirubah;
+repeat while (data sesuai?) is (false)
+-> true;
+stop
+
+@enduml

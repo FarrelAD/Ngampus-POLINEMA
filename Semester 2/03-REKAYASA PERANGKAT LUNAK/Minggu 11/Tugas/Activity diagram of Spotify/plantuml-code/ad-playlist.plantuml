@@ -1,0 +1,14 @@
+@startuml
+
+| User |
+start
+: Klik buat playlist baru;
+| Spotify App |
+: Menyediakan tempat playlist baru;
+| User |
+: Menambahkan lagu-lagu ke playlist;
+| Spotify App |
+: Menampilkan playlist ke daftar putar Spotify;
+stop
+
+@enduml
