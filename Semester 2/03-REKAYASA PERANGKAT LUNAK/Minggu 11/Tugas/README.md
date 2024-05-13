@@ -1,7 +1,8 @@
-# Activity diagram of Spotify
+# Spotify study case
 
+## Activity diagram
 > You can see all the activity diagrams in this link [klik me!](Activity%20diagram%20of%20Spotify/plantuml-code)
-## Login
+### Login
 ```plantuml
 @startuml
 
@@ -25,7 +26,7 @@ stop
 ```
 
 
-## Search content
+### Search content
 ```plantuml
 @startuml
 
@@ -42,7 +43,7 @@ stop
 @enduml
 ```
 
-## Subscription
+### Subscription
 ```plantuml
 @startuml
 
@@ -65,3 +66,7 @@ stop
 
 @enduml
 ```
+
+---
+## Sequence Diagram
+SOON...
