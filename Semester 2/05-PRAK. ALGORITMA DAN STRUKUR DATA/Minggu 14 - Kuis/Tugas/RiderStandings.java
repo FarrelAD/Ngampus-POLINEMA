@@ -12,28 +12,6 @@ public class RiderStandings {
         this.allRace = allRace;
     }
 
-    public void sortStandings() {
-        System.out.println("hahahaha");
-        boolean swapped = true;
-        while (swapped) {
-            System.out.println("yayay");
-            swapped = false;
-            Rider currentRider = allRiders.head;
-            while (currentRider != null && currentRider.prev != null) {
-                System.out.println("appaaan?");
-                if (currentRider.prev.totalPoint > currentRider.totalPoint) {
-                    System.out.println("apa???");
-                    Rider temp = currentRider.prev;
-                    currentRider = currentRider.prev;
-                    currentRider.prev = temp;
-                    swapped = true;
-                } else {
-                    currentRider = currentRider.prev;
-                }
-            }
-        }
-    }
-
     public void printRiderStandings() {
         // sortStandings();
         System.out.print(
