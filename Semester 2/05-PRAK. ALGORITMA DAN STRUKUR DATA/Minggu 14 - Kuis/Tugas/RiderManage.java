@@ -9,12 +9,11 @@ public class RiderManage {
     public void addNewRider(String name, Team team) {
         if (isEmpty()) {
             head = tail =  new Rider(null, name, team, null);
-            totalRider++;
         } else {
             head.next = new Rider(head, name, team, null);
-            totalRider++;
             head = head.next;
         }
+        totalRider++;
     }
 
     public void addPoint(int riderIndex, int currentRace, int point) {

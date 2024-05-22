@@ -3,7 +3,6 @@ import java.util.Random;
 public class RiderStandings {
     RiderManage allRiders;
     CircuitManage allCircuit;
-    // Race singleRace;
     RaceManage allRace;
     int currentRace;
 
@@ -13,51 +12,30 @@ public class RiderStandings {
         this.allRace = allRace;
     }
 
-    public void raceNow(int totalRace) {
-        int[] points = {25, 20, 16, 13, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1};
-
-        for (int i = 0; i < totalRace; i++) {
-            shuffleData(points);
-            int[] tempPoints = points;
-            int[] riderIndex = new int[allRiders.totalRider];
-            for (int j = 0; j < riderIndex.length; j++) {
-                riderIndex[j] = j;
-            }
-            shuffleData(riderIndex);
-            currentRace++;
-
-            Race newRace = new Race(null, allCircuit.showNextRace(currentRace - 1), allRiders, null);
-            for (int j = 0; j < riderIndex.length; j++) {
-                if (tempPoints.length >= 1) {
-                    newRace.allRiders.addPoint(riderIndex[j], currentRace, tempPoints[0]);
-    
-                    // Melakukan swap ke kiri karena data pertama sudah diambil
-                    for (int k = 1; k < tempPoints.length; k++) {
-                        tempPoints[k - 1] = tempPoints[k];
-                    }    
-                    tempPoints[tempPoints.length - 1] = 0;
+    public void sortStandings() {
+        System.out.println("hahahaha");
+        boolean swapped = true;
+        while (swapped) {
+            System.out.println("yayay");
+            swapped = false;
+            Rider currentRider = allRiders.head;
+            while (currentRider != null && currentRider.prev != null) {
+                System.out.println("appaaan?");
+                if (currentRider.prev.totalPoint > currentRider.totalPoint) {
+                    System.out.println("apa???");
+                    Rider temp = currentRider.prev;
+                    currentRider = currentRider.prev;
+                    currentRider.prev = temp;
+                    swapped = true;
                 } else {
-                    newRace.allRiders.addPoint(j, currentRace, 0);
+                    currentRider = currentRider.prev;
                 }
             }
         }
     }
 
-    private static void shuffleData(int[] array) {
-        // Memanfaatkan library bawaan Java (random) untuk melakuakn pengacakan pemilihan data
-        Random random = new Random();
-
-        for (int i = 0; i < array.length; i++) {
-            int randomIndex = random.nextInt(array.length);
-
-            // Swap data saat ini dengan data pada index random
-            int temp = array[i];
-            array[i] = array[randomIndex];
-            array[randomIndex] = temp;
-        }
-    }
-
     public void printRiderStandings() {
+        // sortStandings();
         System.out.print(
             "\n=============================================================================================================================================\n" +
             "|  N  | Nama                  |  Total  |                                         Balapan ke-                                               |\n" +
@@ -66,6 +44,8 @@ public class RiderStandings {
         );
         Rider tmp = allRiders.head;
         int numStanding = 1;
+
+        bubbleSortPoints(allRiders.head);
         while (tmp != null) {
             // Melakukan format skor pada tiap balapan agar output bisa lebih rapi
             String newPointsStr[] = new String[tmp.allPoints.length];
@@ -93,5 +73,34 @@ public class RiderStandings {
             numStanding++;
         }
         System.out.println("=============================================================================================================================================");
+    }
+
+    public void bubbleSortPoints(Rider head) {
+        if (head == null) return;
+    
+        boolean swapped;
+        do {
+            swapped = false;
+            Rider current = head;
+            while (current.prev != null) {
+                if (current.totalPoint < current.prev.totalPoint) {
+                    int tempPoint = current.totalPoint;
+                    current.totalPoint = current.prev.totalPoint;
+                    current.prev.totalPoint = tempPoint;
+    
+                    String tempName = current.name;
+                    current.name = current.prev.name;
+                    current.prev.name = tempName;
+    
+                    // Swap poin array
+                    int[] tempPointsArray = current.allPoints;
+                    current.allPoints = current.prev.allPoints;
+                    current.prev.allPoints = tempPointsArray;
+    
+                    swapped = true;
+                }
+                current = current.prev;
+            }
+        } while (swapped);
     }
 }

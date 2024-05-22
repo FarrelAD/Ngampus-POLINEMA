@@ -119,7 +119,7 @@ public class Main {
                 
         // Objek race manage untuk menampung seluruh balapan yang ada di MotoGP
         int totalRace = 20;
-        RaceManage rcM2024 = new RaceManage(totalRace);
+        RaceManage rcM2024 = new RaceManage(totalRace, rdrM2024, ctM2024);
         
         // Use data from object rdrM2024 and ctM2024 to rider standings
         RiderStandings rdStandings2024 = new RiderStandings(rdrM2024, ctM2024, rcM2024);
@@ -155,9 +155,9 @@ public class Main {
                 );
                 seeNextRace = sc12.next().charAt(0);
                 if (seeNextRace == 'N') {
-                    skipToTheNextRace(ctM2024, rdStandings2024, currentRace);
+                    skipToTheNextRace(ctM2024, rcM2024, currentRace);
                 } else if (seeNextRace == 'Y' || seeNextRace == 'y') {
-                    rdStandings2024.raceNow(1);
+                    rcM2024.raceNow(1);
                 }
             } else {
                 System.out.print(
@@ -191,13 +191,13 @@ public class Main {
         rdStandings2024.printRiderStandings();
     }
 
-    private static void skipToTheNextRace(CircuitManage ctM2024, RiderStandings rdStandings2024, int currentRace) {
+    private static void skipToTheNextRace(CircuitManage ctM2024, RaceManage rcM2024, int currentRace) {
         System.out.print(
             "Masukkan nomor urut balapan selanjutnya (1 - 20) \n" +
             ">>> "
         );
         int nextRace = sc12.nextInt();
-        rdStandings2024.raceNow(nextRace - currentRace);
+        rcM2024.raceNow(nextRace - currentRace);
         // wait bro, it's not done
     }
 }
