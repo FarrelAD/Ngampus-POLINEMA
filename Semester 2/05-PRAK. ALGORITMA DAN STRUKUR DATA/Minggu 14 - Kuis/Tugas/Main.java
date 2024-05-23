@@ -10,7 +10,7 @@ public class Main {
         );
 
         // Data ini berdaarkan data yang ada di MotoGP pada tahun 2024
-        // dengan beberapa penyesuaian
+        // dengan beberapa penyesuaian (pasangan antara rider dan team acak)
         // Sumber: https://www.motogp.com/en/teams/motogp
         String team[] = {
             "Ducati Lenovo Team", // 1 - Ducati
@@ -96,7 +96,6 @@ public class Main {
                 tm2024.addNewTeam(team[i], constructor[4]); // Honda
             }
         }
-
         
         // Menambahkan data rider ke dalam bentuk double linked list
         RiderManage rdrM2024 = new RiderManage();
@@ -116,13 +115,21 @@ public class Main {
         for (int i = 0; i < raceCircuit.length; i++) {
             ctM2024.addNewCircuit(raceCircuit[i]);
         }
-                
+        
         // Objek race manage untuk menampung seluruh balapan yang ada di MotoGP
         int totalRace = 20;
-        RaceManage rcM2024 = new RaceManage(totalRace, rdrM2024, ctM2024);
+        RaceManage rcM2024 = new RaceManage();
+        for (int i = 0; i < totalRace; i++) {
+            Circuit tempCircuit = ctM2024.head;
+            while (tempCircuit != null) {
+                rcM2024.addNewRace(tempCircuit, rdrM2024);
+                tempCircuit = tempCircuit.next;
+            }
+        }
         
-        // Use data from object rdrM2024 and ctM2024 to rider standings
-        RiderStandings rdStandings2024 = new RiderStandings(rdrM2024, ctM2024, rcM2024);
+        
+        StandingsGP rdStandings2024 = new StandingsGP(rdrM2024, ctM2024, rcM2024);
+
 
         int currentRace = 0;
         char seeNextRace = 'y';
@@ -140,7 +147,7 @@ public class Main {
 
                     break;
                 case 3:
-
+                    rdrM2024.printAllRiderPoints();
                     break;
                 default:
                     break;
@@ -155,9 +162,10 @@ public class Main {
                 );
                 seeNextRace = sc12.next().charAt(0);
                 if (seeNextRace == 'N') {
-                    skipToTheNextRace(ctM2024, rcM2024, currentRace);
+                    currentRace += skipToTheNextRace(ctM2024, rcM2024, currentRace);
                 } else if (seeNextRace == 'Y' || seeNextRace == 'y') {
                     rcM2024.raceNow(1);
+                    currentRace++;
                 }
             } else {
                 System.out.print(
@@ -168,7 +176,6 @@ public class Main {
                 nextMenu = sc12.next().charAt(0);
             }
 
-            currentRace++;
             
             // Mekanisme untuk menghapus output yang sudah ditampilkan di terminal
             // System.out.print("\033[H\033[2J");
@@ -186,18 +193,19 @@ public class Main {
             );
         }
         
-    private static void showStandings(RiderStandings rdStandings2024) {
+    private static void showStandings(StandingsGP rdStandings2024) {
         System.out.println("Data klasemen terkini MotoGP 2024");
         rdStandings2024.printRiderStandings();
     }
 
-    private static void skipToTheNextRace(CircuitManage ctM2024, RaceManage rcM2024, int currentRace) {
+    private static int skipToTheNextRace(CircuitManage ctM2024, RaceManage rcM2024, int currentRace) {
         System.out.print(
             "Masukkan nomor urut balapan selanjutnya (1 - 20) \n" +
             ">>> "
         );
         int nextRace = sc12.nextInt();
         rcM2024.raceNow(nextRace - currentRace);
+        return nextRace;
         // wait bro, it's not done
     }
 }

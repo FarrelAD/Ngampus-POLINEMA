@@ -5,6 +5,7 @@ public class TeamManage {
         return head == null;
     }    
 
+    // Addlast
     public void addNewTeam(String name, String constructor) {
         Team temp = new Team(null, name, constructor, null);
         if (isEmpty()) {
@@ -12,7 +13,8 @@ public class TeamManage {
             tail = temp;
         } else {
             tail.next = temp;
-            tail = temp; 
+            temp.prev = tail;
+            tail = temp;
         }
     }
 

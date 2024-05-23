@@ -1,19 +1,16 @@
-import java.util.Random;
-
-public class RiderStandings {
+public class StandingsGP {
     RiderManage allRiders;
     CircuitManage allCircuit;
     RaceManage allRace;
     int currentRace;
 
-    RiderStandings(RiderManage allRiders, CircuitManage allCircuit, RaceManage allRace) {
+    StandingsGP(RiderManage allRiders, CircuitManage allCircuit, RaceManage allRace) {
         this.allRiders = allRiders;
         this.allCircuit = allCircuit;
         this.allRace = allRace;
     }
 
     public void printRiderStandings() {
-        // sortStandings();
         System.out.print(
             "\n=============================================================================================================================================\n" +
             "|  N  | Nama                  |  Total  |                                         Balapan ke-                                               |\n" +
@@ -26,6 +23,7 @@ public class RiderStandings {
         bubbleSortPoints(allRiders.head);
         while (tmp != null) {
             // Melakukan format skor pada tiap balapan agar output bisa lebih rapi
+            // saat dijadikan dalam bentuk tabel
             String newPointsStr[] = new String[tmp.allPoints.length];
             for (int i = 0; i < tmp.allPoints.length; i++) {
                 if (Integer.toString(tmp.allPoints[i]).length() == 1) {
@@ -47,37 +45,29 @@ public class RiderStandings {
                 System.out.printf(" %s |", newPointsStr[i]);
             }
             System.out.println("");
-            tmp = tmp.prev;
+            tmp = tmp.next;
             numStanding++;
         }
         System.out.println("=============================================================================================================================================");
     }
 
     public void bubbleSortPoints(Rider head) {
-        if (head == null) return;
+        // Langsung menghentikan proses sorting ketika datanya kosong
+        if (head == null) return; 
     
         boolean swapped;
         do {
             swapped = false;
             Rider current = head;
-            while (current.prev != null) {
-                if (current.totalPoint < current.prev.totalPoint) {
-                    int tempPoint = current.totalPoint;
-                    current.totalPoint = current.prev.totalPoint;
-                    current.prev.totalPoint = tempPoint;
-    
-                    String tempName = current.name;
-                    current.name = current.prev.name;
-                    current.prev.name = tempName;
-    
-                    // Swap poin array
-                    int[] tempPointsArray = current.allPoints;
-                    current.allPoints = current.prev.allPoints;
-                    current.prev.allPoints = tempPointsArray;
+            while (current.next != null) {
+                if (current.totalPoint < current.next.totalPoint) {
+                    Rider temp = current;
+                    current = current.next;
+                    current.next = temp;
     
                     swapped = true;
                 }
-                current = current.prev;
+                current = current.next;
             }
         } while (swapped);
     }

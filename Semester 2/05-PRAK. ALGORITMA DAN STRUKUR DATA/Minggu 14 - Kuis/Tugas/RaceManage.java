@@ -2,29 +2,19 @@ import java.util.Random;
 
 public class RaceManage {
     int currentRace, totalRace;
-    Race[] race;
     Race head, tail;
-    RiderManage allRiders;
-    CircuitManage allCircuit;
-
-    public RaceManage(int totalRace, RiderManage allRiders, CircuitManage allCircuit) {
-        this.totalRace = totalRace;
-        this.allRiders = allRiders;
-        this.allCircuit = allCircuit;
-    }
 
     boolean isEmpty() {
         return head == null;
     }
 
-    public void addNewRace(Race newRace) {
-        Race tempRace = newRace;
+    // Addfirst
+    public void addNewRace(Circuit circuit, RiderManage allRider) {
         if (isEmpty()) {
-            head = tempRace;
-            tail = tempRace;
+            head = tail = new Race(null, circuit, allRider, null);
         } else {
-            tail.next = tempRace;
-            tail = tempRace;
+            head.prev = new Race(null, circuit, allRider, head);
+            head = head.prev;
         }
     }
 
@@ -34,27 +24,30 @@ public class RaceManage {
         for (int i = 0; i < raceAmount; i++) {
             shuffleData(points);
             int[] tempPoints = points;
-            int[] riderIndex = new int[allRiders.totalRider];
+            int[] riderIndex = new int[head.allRiders.totalRider];
             for (int j = 0; j < riderIndex.length; j++) {
                 riderIndex[j] = j;
             }
             shuffleData(riderIndex);
             currentRace++;
 
-            Race newRace = new Race(null, allCircuit.showNextRace(currentRace - 1), allRiders, null);
+            // Race newRace = new Race(null, allCircuit.showNextRace(currentRace - 1), allRiders, null);
             for (int j = 0; j < riderIndex.length; j++) {
                 if (tempPoints.length >= 1) {
-                    newRace.allRiders.addPoint(riderIndex[j], currentRace, tempPoints[0]);
+                    head.allRiders.addPoint(riderIndex[j], currentRace, tempPoints[0]);
     
                     // Melakukan swap ke kiri karena data pertama sudah diambil
                     for (int k = 1; k < tempPoints.length; k++) {
                         tempPoints[k - 1] = tempPoints[k];
-                    }    
+                    }
                     tempPoints[tempPoints.length - 1] = 0;
                 } else {
-                    newRace.allRiders.addPoint(j, currentRace, 0);
+                    head.allRiders.addPoint(j, currentRace, 0);
                 }
             }
+
+            // Melakukan update pointer head karena dianggap race sudah selesai
+            head = head.next;
         }
     }
 
@@ -69,6 +62,23 @@ public class RaceManage {
             int temp = array[i];
             array[i] = array[randomIndex];
             array[randomIndex] = temp;
+        }
+    }
+
+    public void printAllRaces() {
+        Race tempR = head;
+        while (tempR != null) {
+            System.out.println("\n" + tempR.circuit.name);
+            Rider tempI = tempR.allRiders.head;
+            int numRider = 1;
+            System.out.println("-----------------------------------------\n");
+            while (tempI != null) {
+                System.out.printf("%d. %s\n", numRider, tempI.name);
+                tempI = tempI.next;
+                numRider++;
+            }
+            System.out.println("");
+            tempR = tempR.next;
         }
     }
 }

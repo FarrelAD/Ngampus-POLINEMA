@@ -6,14 +6,15 @@ public class CircuitManage {
         return head == null;
     }
 
+    // Addfirst
     public void addNewCircuit(String name) {
         if (isEmpty()) {
             head = tail =  new Circuit(null, name, null);
             totalCircuit++;
         } else {
-            head.next = new Circuit(head, name, null);
+            head.prev = new Circuit(null, name, head);
             totalCircuit++;
-            head = head.next;
+            head = head.prev;
         }
     }
 
@@ -26,10 +27,18 @@ public class CircuitManage {
                 if (raceNum == nextRace) {
                     result = temp;
                 }
-                temp = temp.prev;
+                temp = temp.next;
                 raceNum++;
             }
         }
         return result;
+    }
+
+    public void printtAllCircuit() {
+        Circuit temp = head;
+        while (temp != null) {
+            System.out.println(temp.name);
+            temp = temp.next;
+        }
     }
 }
