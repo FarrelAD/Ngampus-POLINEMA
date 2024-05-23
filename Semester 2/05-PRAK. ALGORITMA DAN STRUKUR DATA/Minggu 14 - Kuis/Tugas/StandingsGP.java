@@ -1,13 +1,8 @@
 public class StandingsGP {
-    RiderManage allRiders;
-    CircuitManage allCircuit;
-    RaceManage allRace;
-    int currentRace;
+    RaceManage allRaces;
 
-    StandingsGP(RiderManage allRiders, CircuitManage allCircuit, RaceManage allRace) {
-        this.allRiders = allRiders;
-        this.allCircuit = allCircuit;
-        this.allRace = allRace;
+    StandingsGP(RaceManage allRaces) {
+        this.allRaces = allRaces;
     }
 
     public void printRiderStandings() {
@@ -17,10 +12,10 @@ public class StandingsGP {
             "|  o  |                       |  Poin   | 1  | 2  | 3  | 4  | 5  | 6  | 7  | 8  | 9  | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 |\n" +
             "=============================================================================================================================================\n"
         );
-        Rider tmp = allRiders.head;
+        Rider tmp = allRaces.head.allRiders.head;
         int numStanding = 1;
 
-        bubbleSortPoints(allRiders.head);
+        bubbleSortPoints(tmp);
         while (tmp != null) {
             // Melakukan format skor pada tiap balapan agar output bisa lebih rapi
             // saat dijadikan dalam bentuk tabel
@@ -54,21 +49,31 @@ public class StandingsGP {
     public void bubbleSortPoints(Rider head) {
         // Langsung menghentikan proses sorting ketika datanya kosong
         if (head == null) return; 
-    
+
         boolean swapped;
         do {
             swapped = false;
             Rider current = head;
             while (current.next != null) {
                 if (current.totalPoint < current.next.totalPoint) {
-                    Rider temp = current;
-                    current = current.next;
-                    current.next = temp;
+                    // Melakukan proses swapping data-data yang ada di tiap-tiap node
+                    int tempPoint = current.totalPoint;
+                    current.totalPoint = current.next.totalPoint;
+                    current.next.totalPoint = tempPoint;
+    
+                    String tempName = current.name;
+                    current.name = current.next.name;
+                    current.next.name = tempName;
+
+                    int[] tempPointsArray = current.allPoints;
+                    current.allPoints = current.next.allPoints;
+                    current.next.allPoints = tempPointsArray;
     
                     swapped = true;
                 }
                 current = current.next;
             }
         } while (swapped);
+    
     }
 }
