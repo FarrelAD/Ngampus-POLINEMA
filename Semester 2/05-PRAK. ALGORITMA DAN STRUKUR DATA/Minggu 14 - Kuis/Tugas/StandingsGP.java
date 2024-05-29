@@ -123,7 +123,7 @@ public class StandingsGP {
             swapped = false;
             Team current = data;
             while (current.prev != null) {
-                if (current.totalPoint > current.prev.totalPoint) {
+                if (current.totalPoint < current.prev.totalPoint) {
                     // Melakukan proses swapping data-data yang ada di tiap-tiap node
                     int tempPoint = current.totalPoint;
                     current.totalPoint = current.prev.totalPoint;
