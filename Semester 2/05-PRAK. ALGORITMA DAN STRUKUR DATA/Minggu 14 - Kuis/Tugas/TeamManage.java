@@ -7,22 +7,23 @@ public class TeamManage {
 
     // Addlast
     public void addNewTeam(String name, String constructor) {
-        Team temp = new Team(null, name, constructor, null);
         if (isEmpty()) {
-            head = temp;
-            tail = temp;
+            head = tail = new Team(null, name, constructor, null);
         } else {
-            tail.next = temp;
-            temp.prev = tail;
-            tail = temp;
+            tail.next = new Team(tail, name, constructor, null);
+            tail = tail.next;
         }
     }
 
     public void printAllTeams() {
         Team temp = head;
+        int num = 1;
+        System.out.println("");
         while (temp != null) {
-            System.out.println(temp.name);
+            System.out.println(num + ". " + temp.name);
             temp = temp.next;
+            num++;
         }
+        System.out.println("");
     }
 }

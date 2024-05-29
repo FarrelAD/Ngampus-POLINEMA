@@ -31,23 +31,32 @@ public class RaceManage {
             shuffleData(riderIndex);
             currentRace++;
 
-            // Race newRace = new Race(null, allCircuit.showNextRace(currentRace - 1), allRiders, null);
             for (int j = 0; j < riderIndex.length; j++) {
-                if (tempPoints.length >= 1) {
-                    head.allRiders.addPoint(riderIndex[j], currentRace, tempPoints[0]);
-    
-                    // Melakukan swap ke kiri karena data pertama sudah diambil
-                    for (int k = 1; k < tempPoints.length; k++) {
-                        tempPoints[k - 1] = tempPoints[k];
-                    }
-                    tempPoints[tempPoints.length - 1] = 0;
-                } else {
-                    head.allRiders.addPoint(j, currentRace, 0);
+                head.allRiders.addPoint(riderIndex[j], currentRace, tempPoints[0]);
+
+                // Melakukan swap ke kiri karena data pertama sudah diambil
+                for (int k = 1; k < tempPoints.length; k++) {
+                    tempPoints[k - 1] = tempPoints[k];
                 }
+
+                // Reset poin ke 0 di sisi kanan
+                tempPoints[tempPoints.length - 1] = 0;
             }
 
+            // Memperbarui data poin pada team MotoGP
+            updateTeamsPoints(currentRace);
             // Melakukan update pointer head karena dianggap race sudah selesai
             head = head.next;
+        }
+    }
+
+    private void updateTeamsPoints(int currentRace) {
+        Rider tempRider = head.allRiders.head;
+        while (tempRider.next != null) {
+            if (tempRider.team.equals(tempRider.next.team)) {
+                tempRider.team.addPoint(tempRider.allPoints[currentRace - 1] + tempRider.next.allPoints[currentRace - 1]);
+            }
+            tempRider = tempRider.next;
         }
     }
 
@@ -73,7 +82,7 @@ public class RaceManage {
             int numRider = 1;
             System.out.println("-----------------------------------------\n");
             while (tempI != null) {
-                System.out.printf("%d. %s\n", numRider, tempI.name);
+                System.out.printf("%d. %s\t- %s\n", numRider, tempI.name, tempI.team.name);
                 tempI = tempI.next;
                 numRider++;
             }

@@ -32,10 +32,14 @@ public class RiderManage {
 
     public void printAllRider() {
         Rider temp = head;
+        int num = 1;
+        System.out.println("");
         while (temp != null) {
-            System.out.println(temp.name);
+            System.out.println(num + ". " + temp.name + "\t" + temp.team.name + "\t" + temp.totalPoint);
             temp = temp.next;
+            num++;
         }
+        System.out.println("");
     }
 
     public void printAllRiderPoints() {

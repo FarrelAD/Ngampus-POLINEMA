@@ -13,16 +13,16 @@ public class Main {
         // dengan beberapa penyesuaian (pasangan antara rider dan team acak)
         // Sumber: https://www.motogp.com/en/teams/motogp
         String team[] = {
-            "Ducati Lenovo Team", // 1 - Ducati
-            "Prima Pramac Racing", // 2 - Ducati
-            "Gresini Racing MotoGP", // 3 - Ducati
-            "Pertamina Endura VR46 Team", // 4 - Ducati
-            "Aprilia Racing", // 5 - Aprilia
-            "Trackhouse Racing", // 6 - Aprilia
-            "Red Bull KTM Factory Racing", // 7 - KTM
-            "Monster Energy Yamaha MotoGP", // 8 - Yamaha
-            "LCR Honda", // 9 - Honda
-            "Repsol Honda Team" // 10 - Honda
+            "Ducati Lenovo Team           ", // 1 - Ducati
+            "Prima Pramac Racing          ", // 2 - Ducati
+            "Gresini Racing MotoGP        ", // 3 - Ducati
+            "Pertamina Enduro VR46 Team   ", // 4 - Ducati
+            "Aprilia Racing               ", // 5 - Aprilia
+            "Trackhouse Racing            ", // 6 - Aprilia
+            "Red Bull KTM Factory Racing  ", // 7 - KTM
+            "Monster Energy Yamaha MotoGP ", // 8 - Yamaha
+            "LCR Honda                    ", // 9 - Honda
+            "Repsol Honda Team            " // 10 - Honda
         };
 
         String rider[] = {
@@ -127,8 +127,8 @@ public class Main {
             }
         }
         
-        
-        StandingsGP rdStandings2024 = new StandingsGP(rdrM2024, ctM2024, rcM2024);
+        // Melakukan manajemen klasemen seluruh data di MotoGP
+        StandingsGP rdStandings2024 = new StandingsGP(rcM2024);
 
 
         int currentRace = 0;
@@ -141,14 +141,20 @@ public class Main {
             switch (selectedMenu) {
                 case 1:
                     System.out.printf("\nBalapan ke-%d\n", currentRace);
-                    showStandings(rdStandings2024);
+                    rdStandings2024.printRiderStandings();
                     break;
                 case 2:
-
+                    System.out.printf("\nBalapan ke-%d\n", currentRace);
+                    rdStandings2024.printTeamsStandings();
                     break;
                 case 3:
-                    rdrM2024.printAllRiderPoints();
+                    rdrM2024.printAllRider();
                     break;
+                case 4:
+                    tm2024.printAllTeams();
+                    break;
+                case 5:
+                    rcM2024.printAllRaces();
                 default:
                     break;
             }
@@ -185,17 +191,13 @@ public class Main {
     
     private static void menu() {
         System.out.print(
-            " Silakan pilih menu yang tersedia\n" +
-            "   1. Lihat klasemen\n" +
-            "   2. Cari posisi pembalap\n" +
-            "   3. -\n" +
+            "Silakan pilih menu yang tersedia\n" +
+            "   1. Lihat klasemen pembalap\n" +
+            "   2. Lihat klasemen team\n" +
+            "   3. Lihat seluruh pembalap\n" +
+            "   4. Lihat seluruh team\n" +
             ">>> "
             );
-        }
-        
-    private static void showStandings(StandingsGP rdStandings2024) {
-        System.out.println("Data klasemen terkini MotoGP 2024");
-        rdStandings2024.printRiderStandings();
     }
 
     private static int skipToTheNextRace(CircuitManage ctM2024, RaceManage rcM2024, int currentRace) {
