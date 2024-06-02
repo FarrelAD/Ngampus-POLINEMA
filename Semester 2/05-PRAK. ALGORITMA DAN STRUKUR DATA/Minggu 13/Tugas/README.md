@@ -19,6 +19,7 @@ Kelas: TI-1B
 ---
 ## Percobaan 1
 Verifikasi hasil percobaan:
+
 ![Hasil percobaan 1](img/percobaan-1.png)
 
 **Pertanyaan:**
@@ -80,6 +81,7 @@ Verifikasi hasil percobaan:
 ---
 ## Percobaan 2
 Verifikasi hasil percobaan:
+
 ![Hasil percobaan 2](img/percobaan-2.png)
 
 **Pertanyaan:**
@@ -119,6 +121,7 @@ Verifikasi hasil percobaan:
 ---
 ## Percobaan 3
 Verifikasi hasil percobaan:
+
 ![Hasil percobaan 3](img/percobaan-3.png)
 
 **Pertanyaan:**
@@ -172,10 +175,43 @@ Verifikasi hasil percobaan:
 
 ---
 ## Tugas Praktikum
-1. Buat program antrian vaksinasi menggunakan queue berbasis double linked list sesuai ilustrasi 
-dan menu di bawah ini! (counter jumlah antrian tersisa di menu cetak(3) dan data orang yang 
-telah divaksinasi di menu Hapus Data(2) harus ada) 
+1. Buat program antrian vaksinasi menggunakan queue berbasis double linked list sesuai ilustrasi di jobsheet!
+
+    Jawab: Untuk kode yang saya buat bisa cek pada link berikut -> [Tugas praktikum 1](tugas_praktikum_1).
+    Contoh output yang dihasilkan:
+
+    ![Tugas 1 Praktikum - a](img/tugas_praktikum_1a.png)
+
+    ![Tugas 1 Praktikum - b](img/tugas_praktikum_1b.png)
+
+    ![Tugas 1 Praktikum - c](img/tugas_praktikum_1c.png)
+
+    ![Tugas 1 Praktikum - d](img/tugas_praktikum_1d.png)
+
+    **Penjelasan:** Di sini saya membuat tiga buah class, yaitu `Antrian`, `Pengantri`, dan `Main`. Class `Pengantri` ini sama seperti sebuah node yang ada pada struktur data double linked list. `Antrian` ini adalah struktur data double linked list-nya. Seluruh mekanisme menambahkan data, menghapus, hingga melihat seluruh data ada di sini. Kemudian yang terakhir adalah class `Main` yang digunakan untuk menjalankan keseluruhan program. 
+
+    Dikarenakan ini adalah struktur data queue berbasis double linked list, maka untuk proses penambahan data sama seperti menambahkan data dari belakang. Di sini saya menggunakan pointer `tail` agar lebih sederhana (tidak perlu looping untuk menentukan node terakhir). Sehingga pointer `head` posisinya tetap hanya `tail` saja yang terus berpindah. Sedangkan pada penghapusan data, maka dilakukan dari depan ke belakang. Dengan demikian posisi dari `head` akan berpindah ke belakang sedangkan pointer `tail` tetap.
 
 2. Buatlah program daftar film yang terdiri dari id, judul dan rating menggunakan double linked 
 lists, bentuk program memiliki fitur pencarian melalui ID Film dan pengurutan Rating secara 
-descending. Class Film wajib diimplementasikan dalam soal ini. 
+descending. Class Film wajib diimplementasikan dalam soal ini.
+
+    Jawab: Untuk kode yang saya buat bisa cek pada link berikut -> [Tugas praktikum 2](tugas_praktikum_2)
+    Contoh output: 
+
+    ![Tugas 2 praktikum - a](img/tugas_praktikum_2a.png)
+
+    ![Tugas 2 praktikum - b](img/tugas_praktikum_2b.png)
+
+    ![Tugas 2 praktikum - c](img/tugas_praktikum_2c.png)
+
+    ![Tugas 2 praktikum - d](img/tugas_praktikum_2d.png)
+
+    ![Tugas 2 praktikum - e](img/tugas_praktikum_2e.png)
+
+    ![Tugas 2 praktikum - f](img/tugas_praktikum_2f.png)
+
+    **Penjelasan:**
+    Di sini saya membuat tiga class, yaitu `DaftarFilm`, `Film`, dan `Main`. Class `Film` adalah node. `DaftarFilm` adalah kumpulan data berupa double linked list dan juga segala operasi ada di sini. `Main` digunakan untuk menjalankan keseluruhan program.
+
+    Bentuk operasi yang ada di class `DaftarFilm` adalah operasi standar yang biasa ada di double linked list, seperti penambahan data dari depan, belakang, sesuai indeks, hingga penghapusan. Khusus pada bagian sorting, saya menggunakan algoritma *insertion sort*. Jadi, nanti akan diambil satu data dari bagian tidak terurut kemudian akan dimasukkan ke dalam bagian terurut. Karena ini adalah struktur data double linked list dan saya ingin memiliki pointer `head` dan `tail`, maka setiap dilakukan sorting akan selalu diperbarui nilai pointer tersebut. Untuk proses pembaruan pointer `head` sudah ada bersamaan dengan algoritma *insertion sort*. Sedangkan untuk proses pembaruan pointer `tail` dilakukan setelah proses sorting selesai.
