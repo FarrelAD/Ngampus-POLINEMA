@@ -94,10 +94,196 @@ Verifikasi hasil yang didapat:
 ---
 ## Tugas Praktikum
 1. Buat method di dalam class `BinaryTree` yang akan menambahkan node dengan cara rekursif!
+
+    Jawab: Kode yang saya buat sebagai berikut:
+    ```java
+    void addRecursiveWay(Node12 startingNode, int data) {
+        if (isEmpty()) {
+            root = new Node12(data);
+        } else {
+            // Node12 current = root
+            if (data < startingNode.data) {
+                if (startingNode.left != null) {
+                    // current = current.left;
+                    addRecursiveWay(startingNode.left, data);
+                } else {
+                    startingNode.left = new Node12(data);
+                }
+            } else if (data > startingNode.data) {
+                if (startingNode.right != null) {
+                    // current = current.right;
+                    addRecursiveWay(startingNode.right, data);
+                } else {
+                    startingNode.right = new Node12(data);
+                }
+            }
+        }
+    }
+    ```
+    Contoh output:
+
+    ![Tugas praktikum 1](img/tugas1.png)
+
+    Kode tersebut sebenarnya masih mirip dengan kode sebelumnya yaitu menambahkan data dengan metode iterasi. Hal yang paling membedakan adalah dari proses pembaruan node `startingNode` atau `current` pada kode sebelumnya. Jika sebelumnya dilakukan dengan memperbarui node `current` kemudian akan dilakukan proses looping, kali ini saya menggunakan fungsi rekursif untuk memanggil fungsi `addRecursiveWay`. Dengan isi argumen adalah node di sebelah kiri atau kanan dari node saat itu, dan juga data yang ingin ditambahkan. Ini juga membedakan dari sebelumnya yang proses penambahan data dilakukan dari awal node, yaitu `root`. Untuk ini bisa dilakukan dari node manapun.
+
 2. Buat method di dalam class `BinaryTree` untuk menampilkan nilai paling kecil dan yang paling besar yang ada di dalam tree!
+
+    Jawab: Kode yang saya buat sebagai berikut: 
+    ```java
+    int findSmallestData() {
+        int smallestData = root.data;
+        Node12 temp = root;
+        while (temp != null) {
+            if (temp.data < smallestData) {
+                smallestData = temp.data;
+            }
+            temp = temp.left;
+        }
+        return smallestData;
+    }
+    ```
+    Contoh output:
+
+    ![Tugas praktikum 2](img/tugas2.png)
+
+    Kodenya cukup sederhana yaitu akan mencari data terkecil dari node `root` hingga ditemukan data yang paling kecil. Untuk mencari data yang paling kecil, maka yang perlu ditelusuri adalah sisi kiri (atribut `left`). Maka dari itu, saya hanya mencari di sisi kiri node saat itu (`temp = temp.left`). Jika ditemukan data yang paling kecil itu akan ditampung di variabel `smallestData`. Hasil akhir dari proses ini adalah melakukan *return* nilai variabel `smallestData`.
+
 3. Buat method di dalam class `BinaryTree` untuk menampilkan data yang ada di leaf!
+
+    Jawab: Kode yang saya buat seperti ini:
+    ```java
+    public void showLeaf() {
+        System.out.print("\nLeaf tree: ");
+        startSearchLeaf(root);
+    }
+
+    private static void startSearchLeaf(Node12 current) {
+        if (current != null) {
+            if (current.left == null && current.right == null) {
+                System.out.print(current.data + "  ");
+            } else {
+                startSearchLeaf(current.left);
+                startSearchLeaf(current.right);
+            }
+        } 
+    }
+    ```
+
+    Contoh output:
+
+    ![Tugas praktikum 3](img/tugas3.png)
+
+    Saya buat dua method dengan tujuan untuk memanajemen kode dengan baik. Saya pisahkan antara method yang digunakan untuk melakukan proses pencarian leaf di main dan method untuk melakukan pencarian secara rekursif. Manfaat lainnya adalah dari class main tidak perlu menambahkan argumen saat melakukan pemanggilan method pencarian leaf. Seluruh proses ini akan selalu di awali dari `root`. Maka dari itu, pada method `startSearchLeaf` yang ada di dalam method `showLeaf` saya isi argumen `root`. 
+
+    Mekanisme pencarian leaf ini adalah dengan melakukan pengecekan apakah node saat ini (`current`) memiliki atribut left dan right bernilai tidak `null`. Jika iya, maka sudah ditemukan leaf dan akan dicetak ke layar. Jika tidak, maka lanjutkan proses traverse/pencarian hingga menjumpai ujung dari struktur data tree yang ditandai dengan tidak dimilikinya node referensi pada atribut `left` dan `right`.
+
 4. Buat method di dalam class `BinaryTree` untuk menampilkan berapa jumlah leaf yang ada di dalam tree!
+
+    Jawab: Ini adalah kode yang saya buat:
+    ```java
+    public void countLeaf() {
+        totalLeaf = 0; // Mereset total leaf
+        System.out.print("\nTotal leaf : ");
+        startCountLeaf(root);
+        System.out.println(totalLeaf);
+    }
+
+    private void startCountLeaf(Node12 current) {
+        if (current != null) {
+            if (current.left == null && current.right == null) {
+                totalLeaf++;
+            } else {
+                startCountLeaf(current.left);
+                startCountLeaf(current.right);
+            }
+        } 
+    }
+    ```
+    Contoh output:
+
+    ![Tugas praktikum 3](img/tugas4.png)
+
+    Sebenarnya ini masih mirip dengan kode sebelumnya. Saya juga masih menggunakan metode dua method. Perbedaan di sini adalah penggunaan variabel `totalLeaf` yang digunakan untuk menyimpan jumlah leaf yang ada. Hasil ini didapat dari proses traverse hingga menemukan ujung dari struktur data tree. Jika sebelumnya mekanismenya adalah melakukan pencetakan leaf jika telah ditemukan, maka untuk method yang sekarang saya buat akan menambahkan/increment pada variabel `totalLeaf`. Hasil akhir dari proses ini adalah dengan mencetak variabel `totalLeaf`.
+
+
 5. Modifikasi class `BinaryTreeArray`, dan tambahkan:
     - Method `add(int data)` untuk memasukkan data ke dalam tree
+
+        Jawab: Saya buat kode berikut:
+        ```java
+        public void add(int newData) {
+            for (int i = 0; i < data.length;) {
+                if (data[i] == 0) {
+                    data[i] = newData;
+                    idxLast = i;
+                    break;
+                } else if (newData > data[i]) {
+                    i = 2 * i + 2;
+                    if (i >= data.length) {
+                        makeNewArray(i + 1);
+                    }
+                } else if (newData < data[i]) {
+                    i = 2 * i + 1;
+                    if (i >= data.length) {
+                        makeNewArray(i + 1);
+                    }
+                }
+            }
+        }
+
+        private void makeNewArray(int length) {
+            int[] oldData = new int[data.length];
+
+            // Menyimpan data lama ke array baru
+            for (int i = 0; i < data.length; i++) {
+                oldData[i] = data[i];
+            }
+
+            // Membuat array dengan lebih panjang
+            data = new int[length + 1];
+            for (int i = 0; i < oldData.length; i++) {
+                data[i] = oldData[i];
+            }
+        }
+        ```
+
+        Contoh output:
+
+        ![Tugas praktikum 5a](img/tugas5a.png)
+
+        Kode pada method `add` adalah kode utama. Di situ dia berperan untuk memposisikan nilai baru ke array yang sudah ada. Penempatan ini berdasarkan pada konsep *binary search tree* yang mana nilai di node left selalu kurang dari node parent dan nilai di node right selalur lebih dari node parent. Karena ini array, maka penempatan data left dan right sesuai pada pola umum, yaitu *2i + 1* jika ganjil dan *2i + 2* jika genap. Maka dari itu, ada kalanya indeks yang akan dimasukkan tersebut melebihi batas dari array yang sudah dibuat. Untuk mengatasi ini saya membuat method `makeNewArray` yang berguna untuk membuat array baru dengan data-data yang dipertahankan dari array sebelumnya. 
+
+        Saya juga menambahkan method `print` untuk membuktikan apakah data yang diinputkan sudah benar-benar tersimpan.
+        ```java
+        void print() {
+            for (int i : data) {
+                System.out.print(i + " ");
+            }
+        }
+        ```
+
     - Method `traversePreOrder()` dan `traversePostOrder()`
-    
+
+        Jawab: Kode yang saya buat sebagai berikut: 
+        ```java
+        void traversePreOrder(int idxStart) {
+            if (idxStart <= idxLast && data[idxStart] != 0) {
+                System.out.print(data[idxStart] + " ");
+                traverseInOrder(2 * idxStart + 1);
+                traverseInOrder(2 * idxStart + 2);
+            }
+        }
+
+        void traversePostOrder(int idxStart) {
+            if (idxStart <= idxLast && data[idxStart] != 0) {
+                traverseInOrder(2 * idxStart + 1);
+                traverseInOrder(2 * idxStart + 2);
+                System.out.print(data[idxStart] + " ");
+            }
+        }
+        ```
+        Contoh output:
+
+        ![Tugas praktikum 5b](img/tugas5b.png)
+        
+        Secara bentuk kode, dua method tersebut tidak berbeda jauh dengan method sebelumnya, yaitu `traverseInOrder`. Secara konsep traverse pre order dilakukan dengan alur : parent -> node kiri -> node kanan. Sedangkan traverse post order dilakukan dengan alur : node kiri -> node kanan -> parent. Untuk melakukan itu semua, hanya perlu d
