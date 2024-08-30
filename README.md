@@ -26,3 +26,6 @@ I hope this repository can help me to manage my college stuff. I also hope this 
 - [PRAK. BASIS DATA](https://github.com/FarrelAD/Ngampus-POLINEMA/tree/main/Semester%202/07-Prak.%20BASIS%20DATA)
 - [SISTEM OPERASI](https://github.com/FarrelAD/Ngampus-POLINEMA/tree/main/Semester%202/08-SISTEM%20OPERASI)
 - [DESAIN ANTARMUKA](https://github.com/FarrelAD/Ngampus-POLINEMA/tree/main/Semester%202/09-Desain%20Antarmuka)
+
+### 3rd semester
+- [DESAIN DAN PEMROGRAMAN WEB](https://github.com/FarrelAD/Ngampus-POLINEMA/tree/main/semester-3)
