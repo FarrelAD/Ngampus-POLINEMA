@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desain dan Pemrograman Web | Farrel AD</title>
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        main {
+            padding-bottom: 20rem;
+        }
+        
+        #hero-section {
+            padding: 5rem 16rem 5rem 6rem;
+            background-color: bisque;
+            border: 2px solid black;
+            border-bottom-left-radius: 0.4rem;
+            border-bottom-right-radius: 0.4rem;
+        }
+
+        #farrel-web-work {
+            display: flex;
+            background-color: white;
+            padding: 2rem 3rem 2rem 5rem;
+        }
+
+        #left-sidebar {
+            border: 2px solid black;
+            border-radius: 0.4rem;
+            width: 15%;
+            position: sticky;
+            height: 500px;
+        }
+
+        .week-option {
+            width: 81%;
+            padding: .5rem .5rem;
+            padding-left: 2rem;
+            outline: 2px solid black;
+        }
+        
+        .week-option:first-of-type {
+            border-top-left-radius: 0.4rem;
+            border-top-right-radius: 0.4rem;
+            background-color: black;
+            color: white;
+            font-weight: bold;
+        }
+
+        .week-option:hover {
+            cursor: pointer;
+            background-color: lightgray;
+            color: white;
+            outline: 2px solid gray;
+        }
+
+        .week-option:active {
+            background-color: black;
+            outline: 2px solid black;
+            color: white;
+            font-weight: bold;
+        }
+
+        #main-content {
+            width: 85%;
+            padding: 2rem;
+            padding-top: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, 260px);
+            grid-auto-rows: 280px;
+            gap: 1rem;
+        }
+
+        .item-card {
+            border: 2px solid black;
+            border-radius: 0.4rem;
+            transition: box-shadow 0.3s ease;
+            text-decoration: none;
+            color: black;
+        }
+
+        .item-card:hover {
+            box-shadow: .2rem .2rem 0 0 gray;
+            cursor: pointer;
+        }
+        
+        .item-content {
+            padding: 1rem;
+            padding-top: 0.3rem;
+        }
+
+        .img-web-preview {
+            width: 100%;
+            height: 135px;
+            object-fit: cover;
+            border-top-left-radius: 0.4rem;
+            border-top-right-radius: 0.4rem;
+        }
+
+        .item-title:hover {
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        .short-description-card {
+            font-size: 10px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+
+    </nav>
+
+    <main>
+        <section id="hero-section">
+            <h1>Selamat datang! 👋</h1>
+            <p>Halaman website akan digunakan sebagai beranda dari keseluruhan website lainnya yang telah saya buat selama saya berkuliah di Polinema D4 Teknik Informatika semester 3 mata kuliah Desain dan Pemrograman Web</p>
+        </section>
+
+        <section id="farrel-web-work">
+            <section id="left-sidebar">
+                <div class="week-option">Minggu 1</div>
+                <div class="week-option">Minggu 2</div>
+                <div class="week-option">Minggu 3</div>
+                <div class="week-option">Minggu 4</div>
+                <div class="week-option">Minggu 5</div>
+                <div class="week-option">Minggu 6</div>
+                <div class="week-option">Minggu 7</div>
+                <div class="week-option">Minggu 8</div>
+                <div class="week-option">Minggu 9</div>
+                <div class="week-option">Minggu 10</div>
+                <div class="week-option">Minggu 11</div>
+                <div class="week-option">Minggu 12</div>
+                <div class="week-option">Minggu 13</div>
+                <div class="week-option">Minggu 14</div>
+            </section>
+    
+            <div id="main-content">
+                <a class="item-card" href="01-minggu-1/hello.html" target="_blank">
+                    <div class="item-web-preview">
+                        <img src="./assets/img/01-minggu-1/hello.html.png" alt="Web page preview" class="img-web-preview">
+                    </div>
+                    <div class="item-content">
+                        <h4 class="item-title">Hello.html</h4>
+                        <p class="short-description-card">Halaman web pertama yang dibuat pada mata kuliah Desain dan Pemrograman Web semester 3 Polinema tahun 2024</p>
+                    </div>
+                </a>
+                <a class="item-card" href="01-minggu-1/heading.html" target="_blank">
+                    <div class="item-web-preview">
+                        <img src="./assets/img/01-minggu-1/heading.html.png" alt="Web page preview" class="img-web-preview">
+                    </div>
+                    <div class="item-content">
+                        <h4 class="item-title">Heading.html</h4>
+                        <p class="short-description-card">Belajar heading</p>
+                    </div>
+                </a>
+                <a class="item-card" href="01-minggu-1/paragraf.html" target="_blank">
+                    <div class="item-web-preview">
+                        <img src="./assets/img/01-minggu-1/paragraf.html.png" alt="Web page preview" class="img-web-preview">
+                    </div>
+                    <div class="item-content">
+                        <h4 class="item-title">Paragraf.html</h4>
+                        <p class="short-description-card">Belajar berbagai align pada suatu paragraf</p>
+                    </div>
+                </a>
+                <a class="item-card" href="01-minggu-1/font.html" target="_blank">
+                    <div class="item-web-preview">
+                        <img src="./assets/img/01-minggu-1/font.html.png" alt="Web page preview" class="img-web-preview">
+                    </div>
+                    <div class="item-content">
+                        <h4 class="item-title">Font.html</h4>
+                        <p class="short-description-card">Mencoba basic styling untuk sebuah teks dengan hanya mengandalkan HTML murni</p>
+                    </div>
+                </a>
+                <a class="item-card" href="01-minggu-1/karakter.html" target="_blank">
+                    <div class="item-web-preview">
+                        <img src="./assets/img/01-minggu-1/karakter.html.png" alt="Web page preview" class="img-web-preview">
+                    </div>
+                    <div class="item-content">
+                        <h4 class="item-title">Karakter.html</h4>
+                        <p class="short-description-card"></p>
+                    </div>
+                </a>
+                <a class="item-card" href="01-minggu-1/garishorizontal.html" target="_blank">
+                    <div class="item-web-preview">
+                        <img src="./assets/img/01-minggu-1/garishorizontal.html.png" alt="Web page preview" class="img-web-preview">
+                    </div>
+                    <div class="item-content">
+                        <h4 class="item-title">GarisHorizontal.html</h4>
+                        <p class="short-description-card">Halaman web pertama yang dibuat pada mata kuliah Desain dan Pemrograman Web semester 3 Polinema tahun 2024</p>
+                    </div>
+                </a>
+                <a class="item-card" href="01-minggu-1/list.html" target="_blank">
+                    <div class="item-web-preview">
+                        <img src="./assets/img/01-minggu-1/list.html.png" alt="Web page preview" class="img-web-preview">
+                    </div>
+                    <div class="item-content">
+                        <h4 class="item-title">List.html</h4>
+                        <p class="short-description-card">Halaman web pertama yang dibuat pada mata kuliah Desain dan Pemrograman Web semester 3 Polinema tahun 2024</p>
+                    </div>
+                </a>
+                <a class="item-card" href="01-minggu-1/warna.html" target="_blank">
+                    <div class="item-web-preview">
+                        <img src="./assets/img/01-minggu-1/warna.html.png" alt="Web page preview" class="img-web-preview">
+                    </div>
+                    <div class="item-content">
+                        <h4 class="item-title">Warna.html</h4>
+                        <p class="short-description-card">Halaman web pertama yang dibuat pada mata kuliah Desain dan Pemrograman Web semester 3 Polinema tahun 2024</p>
+                    </div>
+                </a>
+                <a class="item-card" href="01-minggu-1/gambar.html" target="_blank">
+                    <div class="item-web-preview">
+                        <img src="./assets/img/01-minggu-1/gambar.html.png" alt="Web page preview" class="img-web-preview">
+                    </div>
+                    <div class="item-content">
+                        <h4 class="item-title">Gambar.html</h4>
+                        <p class="short-description-card">Halaman web pertama yang dibuat pada mata kuliah Desain dan Pemrograman Web semester 3 Polinema tahun 2024</p>
+                    </div>
+                </a>
+                <a class="item-card" href="01-minggu-1/macamLink.html" target="_blank">
+                    <div class="item-web-preview">
+                        <img src="./assets/img/01-minggu-1/macamlink.html.png" alt="Web page preview" class="img-web-preview">
+                    </div>
+                    <div class="item-content">
+                        <h4 class="item-title">MacamLink.html</h4>
+                        <p class="short-description-card">Halaman web pertama yang dibuat pada mata kuliah Desain dan Pemrograman Web semester 3 Polinema tahun 2024</p>
+                    </div>
+                </a>
+                <a class="item-card" href="01-minggu-1/tugasLink.html" target="_blank">
+                    <div class="item-web-preview">
+                        <img src="./assets/img/01-minggu-1/tugaslink.html.png" alt="Web page preview" class="img-web-preview">
+                    </div>
+                    <div class="item-content">
+                        <h4 class="item-title">TugasLink.html</h4>
+                        <p class="short-description-card">Halaman web pertama yang dibuat pada mata kuliah Desain dan Pemrograman Web semester 3 Polinema tahun 2024</p>
+                    </div>
+                </a>
+                <a class="item-card" href="01-minggu-1/buatTabel.html" target="_blank">
+                    <div class="item-web-preview">
+                        <img src="./assets/img/01-minggu-1/buattabel.html.png" alt="Web page preview" class="img-web-preview">
+                    </div>
+                    <div class="item-content">
+                        <h4 class="item-title">BuatTabel.html</h4>
+                        <p class="short-description-card">Halaman web pertama yang dibuat pada mata kuliah Desain dan Pemrograman Web semester 3 Polinema tahun 2024</p>
+                    </div>
+                </a>
+                <a class="item-card" href="01-minggu-1/buatForm.html" target="_blank">
+                    <div class="item-web-preview">
+                        <img src="./assets/img/01-minggu-1/buatform.html.png" alt="Web page preview" class="img-web-preview">
+                    </div>
+                    <div class="item-content">
+                        <h4 class="item-title">BuatForm.html</h4>
+                        <p class="short-description-card">Latihan membuat sebuah form sederhana di HTML</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
