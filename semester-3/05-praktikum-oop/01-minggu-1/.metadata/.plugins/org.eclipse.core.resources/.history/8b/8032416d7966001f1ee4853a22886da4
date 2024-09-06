@@ -1,0 +1,17 @@
+package percobaan;
+
+public class Main {
+
+	public static void main(String[] args) {
+		System.out.println("MARI BERSEPEDA!!!!\n\n");
+		Sepeda polygon = new Sepeda();
+		
+		polygon.setHarga(24000000);
+		polygon.setMerk("Polygon");
+		polygon.addSpeed(20);
+		
+		System.out.println("Merk sepeda : " + polygon.getMerk());
+		System.out.println("Kecepatan saat ini : " + polygon.getKecepatan());
+	}
+
+}

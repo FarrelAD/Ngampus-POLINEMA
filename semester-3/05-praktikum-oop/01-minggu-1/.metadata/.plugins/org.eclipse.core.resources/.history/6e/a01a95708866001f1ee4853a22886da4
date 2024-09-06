@@ -1,0 +1,40 @@
+package tugas.kelompok.oop;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		BujurSangkar bs = new BujurSangkar();
+		
+		Scanner sc = new Scanner(System.in);
+		showMenu();
+		char pilihan = sc.next().charAt(0);
+		char opsiNgitung = sc.next().charAt(0);
+		switch (pilihan) {
+		case 1: {
+			float sisiInput = sc.nextFloat();
+			bs.setSisi(opsiNgitung);
+			if (opsiNgitung == '1') {
+				System.out.println(bs.hitungLuas());
+			} else if (opsiNgitung == '2') {
+				System.out.println(bs.hitungKeliling());
+			}
+		}
+		default:
+			throw new IllegalArgumentException("Unexpected value: " + );
+		}
+		
+	}
+	
+	private static void showMenu() {
+		System.out.println("1. Bujur sangkar \n2. Segitiga\n3. Persegi panjang");
+	}
+	
+	private static void showOpsi() {
+		System.out.println("1. Luas\n2. Keliling");
+	}
+	
+	
+
+}

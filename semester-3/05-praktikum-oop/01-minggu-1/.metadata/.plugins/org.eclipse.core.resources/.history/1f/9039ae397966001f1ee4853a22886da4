@@ -1,0 +1,14 @@
+package percobaan;
+
+public class Main {
+
+	public static void main(String[] args) {
+		System.out.println("Hello world");
+		
+		Sepeda polygon = new Sepeda();
+		
+		polygon.setHarga(24000000);
+		polygon.setMerk("Polygon");
+	}
+
+}

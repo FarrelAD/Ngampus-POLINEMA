@@ -1,0 +1,15 @@
+package percobaan;
+
+public class Sepeda {
+	String merk;
+	float harga;
+	int kecepatan;
+	int gear;
+	
+	public Sepeda(String merk, float harga, int kecepatan, int gear) {
+		this.merk = merk;
+		this.harga = harga;
+		this.kecepatan = kecepatan;
+		this.gear = gear;
+	}
+}

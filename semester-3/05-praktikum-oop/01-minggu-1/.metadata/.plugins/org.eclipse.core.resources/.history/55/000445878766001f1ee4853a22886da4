@@ -1,0 +1,8 @@
+package tugas.kelompok.oop;
+
+public class BujurSangkar {
+
+	public BujurSangkar() {
+		
+	}
+}

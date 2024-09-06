@@ -1,0 +1,11 @@
+package mulai.oop;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Mahasiswa mhs1 = new Mahasiswa("Bejo", 20, "23412918");
+		
+		System.out.println("Nama mahasiswa 1 : " + mhs1.getNama());
+	}
+
+}

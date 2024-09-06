@@ -1,0 +1,20 @@
+package tugas.kelompok.oop;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		BujurSangkar bs = new BujurSangkar();
+		
+		Scanner sc = new Scanner(System.in);
+		
+		
+		
+	}
+	
+	private void showMenu() {
+		System.out.println("1. Bujur sangkar \n2. Segitiga\n3. Persegi panjang");
+	}
+
+}

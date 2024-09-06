@@ -1,0 +1,12 @@
+package mulai.oop;
+
+public class Mahasiswa {
+	String nama;
+	int umur;
+	String nim;
+	
+	Mahasiswa(String nama, String nim) {
+		this.nama = nama;
+		this.nim = nim;
+	}
+}
