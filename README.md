@@ -28,4 +28,4 @@ I hope this repository can help me to manage my college stuff. I also hope this 
 - [DESAIN ANTARMUKA](https://github.com/FarrelAD/Ngampus-POLINEMA/tree/main/Semester%202/09-Desain%20Antarmuka)
 
 ### 3rd semester
-- [DESAIN DAN PEMROGRAMAN WEB](https://github.com/FarrelAD/Ngampus-POLINEMA/tree/main/semester-3)
+- [DESAIN DAN PEMROGRAMAN WEB](https://github.com/FarrelAD/Ngampus-POLINEMA/tree/main/semester-3/01-desain-dan-pemrograman-web)
