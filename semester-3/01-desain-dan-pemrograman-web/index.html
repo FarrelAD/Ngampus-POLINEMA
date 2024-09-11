@@ -4,85 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desain dan Pemrograman Web | Farrel AD</title>
-    <style>
-        * {
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        body {
-            margin: 0;
-        }
-
-        main {
-            padding-bottom: 20rem;
-        }
-        
-        #hero-section {
-            padding: 5rem 16rem 5rem 6rem;
-            background-color: bisque;
-            border: 2px solid black;
-            border-bottom-left-radius: 0.4rem;
-            border-bottom-right-radius: 0.4rem;
-        }
-
-        #farrel-web-work {
-            display: flex;
-            background-color: white;
-            padding: 2rem 3rem 2rem 5rem;
-        }
-
-        #left-sidebar {
-            border: 2px solid black;
-            border-radius: 0.4rem;
-            width: 15%;
-            position: sticky;
-            height: 500px;
-        }
-
-        .week-option {
-            box-sizing: border-box;
-            width: 100%;
-            padding: .5rem .5rem;
-            padding-left: 2rem;
-            outline: 2px solid black;
-        }
-        
-        .week-option:first-of-type {
-            border-top-left-radius: 0.4rem;
-            border-top-right-radius: 0.4rem;
-            background-color: black;
-            color: white;
-            font-weight: bold;
-        }
-
-        .week-option:hover {
-            cursor: pointer;
-            background-color: lightgray;
-            color: white;
-            outline: 2px solid gray;
-        }
-
-        .week-option:active {
-            background-color: black;
-            outline: 2px solid black;
-            color: white;
-            font-weight: bold;
-        }
-
-        #main-content {
-            width: 85%;
-            padding: 2rem;
-            padding-top: 0;
-        }
-        
-        .week-project-data {
-            width: 100%;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, 260px);
-            grid-auto-rows: 280px;
-            gap: 1rem;
-        }
-    </style>
+    <link rel="stylesheet" href="./assets/css/index.css">
     <script src="./components/ProjectCard.js"></script>
 </head>
 <body>
@@ -198,21 +120,6 @@
         </section>
     </main>
 
-    <script>
-        const weekOptions = document.querySelectorAll('.week-option');
-
-        let currentWeek = 0;
-        weekOptions.forEach((week, index) => {
-            week.addEventListener('click', function() {
-                weekOptions[currentWeek].style.backgroundColor = 'white'
-                weekOptions[currentWeek].style.color = 'black'
-                weekOptions[currentWeek].style.fontWeight = 'normal'
-                this.style.backgroundColor = 'black'
-                this.style.color = 'white'
-                this.style.fontWeight = 'bold'
-                currentWeek = index
-            })
-        });
-    </script>
+    <script src="./assets/js/index.js"></script>
 </body>
 </html>
