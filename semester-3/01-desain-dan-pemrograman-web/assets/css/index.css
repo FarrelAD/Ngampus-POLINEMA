@@ -70,8 +70,12 @@ main {
 
 .week-project-data {
     width: 100%;
-    display: grid;
+    display: none;
     grid-template-columns: repeat(auto-fit, 260px);
     grid-auto-rows: 280px;
     gap: 1rem;
+}
+
+.week-project-data:first-of-type {
+    display: grid;
 }
