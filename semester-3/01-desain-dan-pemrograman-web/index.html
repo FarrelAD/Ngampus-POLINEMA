@@ -40,7 +40,8 @@
         }
 
         .week-option {
-            width: 81%;
+            box-sizing: border-box;
+            width: 100%;
             padding: .5rem .5rem;
             padding-left: 2rem;
             outline: 2px solid black;
@@ -115,10 +116,6 @@
     </style>
 </head>
 <body>
-    <nav>
-
-    </nav>
-
     <main>
         <section id="hero-section">
             <h1>Selamat datang! 👋</h1>
@@ -143,7 +140,7 @@
                 <div class="week-option">Minggu 14</div>
             </section>
     
-            <div id="main-content">
+            <section id="main-content">
                 <a class="item-card" href="01-minggu-1/hello.html" target="_blank">
                     <div class="item-web-preview">
                         <img src="./assets/img/01-minggu-1/hello.html.png" alt="Web page preview" class="img-web-preview">
@@ -261,8 +258,25 @@
                         <p class="short-description-card">Latihan membuat sebuah form sederhana di HTML</p>
                     </div>
                 </a>
-            </div>
+            </section>
         </section>
     </main>
+
+    <script>
+        const weekOptions = document.querySelectorAll('.week-option');
+
+        let currentWeek = 0;
+        weekOptions.forEach((week, index) => {
+            week.addEventListener('click', function() {
+                weekOptions[currentWeek].style.backgroundColor = 'white'
+                weekOptions[currentWeek].style.color = 'black'
+                weekOptions[currentWeek].style.fontWeight = 'normal'
+                this.style.backgroundColor = 'black'
+                this.style.color = 'white'
+                this.style.fontWeight = 'bold'
+                currentWeek = index
+            })
+        });
+    </script>
 </body>
 </html>
