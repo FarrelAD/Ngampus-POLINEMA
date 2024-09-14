@@ -56,9 +56,10 @@ main.innerHTML = `
                     Laki-laki
                 </div>
                 <div>
-                    <input type="radio" name="gender" id="form-gender-male" class="form-input"value="female">
+                    <input type="radio" name="gender" id="form-gender-female" class="form-input"value="female">
                     Perempuan
                 </div>
+                <input type="hidden" name="gender" id="form-gender-null" value="">
             </div>
         </div>
         <div class="form-field">
@@ -80,6 +81,7 @@ main.innerHTML = `
                     <input type="checkbox" name="hobbies" value="others">
                     Lain-lain
                 </div>
+                <input type="hidden" name="hobbies" id="form-hobbies-null" value="">
             </div>
         </div>
         <div class="form-field">
@@ -105,6 +107,7 @@ main.innerHTML = `
                     <input type="checkbox" name="jobs" value="others">
                     Lain-lain
                 </div>
+                <input type="hidden" name="jobs" id="form-jobs-null" value="">
             </div>
         </div>
 
@@ -121,10 +124,84 @@ const formInput = document.querySelectorAll('.form-input')
 
 formInput.forEach(el => {
     el.addEventListener('input', function() {
-        if (this.value == null || this.value == '') {
+        if (this.value == '') {
             this.style.borderRadius = '.25rem'
             this.style.border = '2px solid red'
             this.style.outline = '5px solid rgba(255, 0, 0, 0.2)'
+        } else {
+            this.style.border = '1px solid gray'
+            this.style.outline = 'none'
         }
     })
-});
+})
+
+let isFormDataComplete = true
+
+const form = document.getElementsByTagName('form')[0]
+form.addEventListener('submit', function(event) {
+    event.preventDefault()
+
+    const formData = new FormData(this)
+
+    let genderInput = 0
+    let hobbiesInput = 0
+    let jobsInput = 0
+    
+    formData.forEach((value, key) => {
+        console.log('value: ' + value)
+        
+        switch (key) {
+            case 'name':
+            case 'address':
+            case 'date-of-birth':            
+                if (value === '') {
+                    isFormDataComplete = false
+                }
+                break;
+            case 'gender':
+                genderInput++
+                break;
+            case 'hobbies':
+                hobbiesInput++
+                break;
+            case 'jobs':
+                jobsInput++
+                break;
+        }
+    })
+
+    if (genderInput == 1 || hobbiesInput == 1 || jobsInput == 1) {
+        isFormDataComplete = false
+    }
+
+    document.getElementById('form-gender-null').disabled = true
+    document.getElementById('form-gender-null').disabled = true
+    document.getElementById('form-gender-null').disabled = true
+
+    if (!isFormDataComplete) {
+        alert('Formulir tidak bisa dikirim! Pastikan seluruh data sudah terisi terlebih dahulu!')
+    } else {
+        this.submit()
+    }
+})
+
+// function inputCheckedHandler(el) {
+//     if (!el.checked) {
+//         isFormDataComplete = false
+//     }
+// }
+
+// const genderForm = document.querySelectorAll('input[name="gender"')
+// genderForm.forEach(el => {
+//     inputCheckedHandler(el)
+// })
+
+// const hobbiesForm = document.querySelectorAll('input[name="hobbies"')
+// hobbiesForm.forEach(el => {
+//     inputCheckedHandler(el)
+// })
+
+// const jobsForm = document.querySelectorAll('input[name="jobs"')
+// jobsForm.forEach(el => {
+//     inputCheckedHandler(el)
+// })
