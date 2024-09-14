@@ -184,24 +184,3 @@ form.addEventListener('submit', function(event) {
         this.submit()
     }
 })
-
-// function inputCheckedHandler(el) {
-//     if (!el.checked) {
-//         isFormDataComplete = false
-//     }
-// }
-
-// const genderForm = document.querySelectorAll('input[name="gender"')
-// genderForm.forEach(el => {
-//     inputCheckedHandler(el)
-// })
-
-// const hobbiesForm = document.querySelectorAll('input[name="hobbies"')
-// hobbiesForm.forEach(el => {
-//     inputCheckedHandler(el)
-// })
-
-// const jobsForm = document.querySelectorAll('input[name="jobs"')
-// jobsForm.forEach(el => {
-//     inputCheckedHandler(el)
-// })
