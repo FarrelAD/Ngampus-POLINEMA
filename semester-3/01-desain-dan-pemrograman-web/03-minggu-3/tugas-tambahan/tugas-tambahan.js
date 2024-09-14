@@ -139,6 +139,7 @@ let isFormDataComplete = true
 
 const form = document.getElementsByTagName('form')[0]
 form.addEventListener('submit', function(event) {
+    isFormDataComplete = true
     event.preventDefault()
 
     const formData = new FormData(this)
@@ -148,8 +149,6 @@ form.addEventListener('submit', function(event) {
     let jobsInput = 0
     
     formData.forEach((value, key) => {
-        console.log('value: ' + value)
-        
         switch (key) {
             case 'name':
             case 'address':
@@ -174,13 +173,13 @@ form.addEventListener('submit', function(event) {
         isFormDataComplete = false
     }
 
-    document.getElementById('form-gender-null').disabled = true
-    document.getElementById('form-gender-null').disabled = true
-    document.getElementById('form-gender-null').disabled = true
-
+    console.log('nilai [2]: ' + isFormDataComplete)
     if (!isFormDataComplete) {
         alert('Formulir tidak bisa dikirim! Pastikan seluruh data sudah terisi terlebih dahulu!')
     } else {
+        document.getElementById('form-gender-null').disabled = true
+        document.getElementById('form-hobbies-null').disabled = true
+        document.getElementById('form-jobs-null').disabled = true
         this.submit()
     }
 })
