@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<head>
+    <title>JQUERY DOM GET</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(() => {
+            $('#btn1').click(() => {
+                alert($('#test1').text())
+            })
+
+            $('#btn2').click(() => {
+                alert($('#test2').html())
+            })
+
+            $('#btn3').click(() => {
+                alert($('#test3').val())
+            })
+        })
+    </script>
+</head>
+<body>
+    <p id="test1">This is the first paragraph</p>
+    <p id="test2">This is <b> another </b> paragraph.</p>
+
+    <p>Your name: <input type="text" id="test3"></p>
+
+    <button id="btn1">Get TEXT</button>
+    <button id="btn2">Get HTML</button>
+    <button id="btn3">Get VALUE</button>
+</body>
+</html>

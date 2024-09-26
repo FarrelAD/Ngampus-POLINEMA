@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<head>
+    <title>JQUERY DOM SET</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(() => {
+            $('#btn1').click(() => {
+                $('#test1').text('<b>Hello world!</b>')
+            })
+
+            $('#btn2').click(() => {
+                $('#test2').html('<b>Hello world!</b>')
+            })
+
+            $('#btn3').click(() => {
+                $('#test3').val('Polinema')
+            })
+        })
+    </script>
+</head>
+<body>
+    <p id="test1">This is the first paragraph</p>
+    <p id="test2">This is <b>another</b> paragraph</p>
+
+    <p>Your name: <input type="text" id="test3"></p>
+
+    <button id="btn1">Set TEXT</button>
+    <button id="btn2">Set HTML</button>
+    <button id="btn3">Set VALUE</button>
+</body>
+</html>
