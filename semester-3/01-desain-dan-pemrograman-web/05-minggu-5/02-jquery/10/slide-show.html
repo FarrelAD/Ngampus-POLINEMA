@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<head>
+    <title>JQUERY SLIDE SHOW</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        var i = 0
+        $(document).ready(() => {
+            $('.slidertitle, #slider img').hide()
+            showNextImage()
+            setInterval('showNextImage()', 3000)
+        })
+
+        function showNextImage() {
+            i++
+            $('#sliderimage' + i).appendTo('#slider')
+                .fadeIn(1100)
+                .fadeOut(1100)
+            $('#title' + i).appendTo('#slider')
+                .fadeIn(1100)
+                .fadeOut(1100)
+
+            i = i == 3 ? 0 : i
+        }
+    </script>
+</head>
+<body>
+    <div id="slider">
+        <img src="https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Lamborghini Countach" id="sliderimage1">
+        <div class="slidertitle" id="title1">Gambar 1</div>
+
+        <img src="https://images.pexels.com/photos/112460/pexels-photo-112460.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Ferrari F40" id="sliderimage2">
+        <div class="slidertitle" id="title2">Gambar 2</div>
+
+        <img src="https://images.pexels.com/photos/707046/pexels-photo-707046.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Esemka" id="sliderimage3">
+        <div class="slidertitle" id="title3">Gambar 3</div>
+    </div>
+</body>
+</html>
