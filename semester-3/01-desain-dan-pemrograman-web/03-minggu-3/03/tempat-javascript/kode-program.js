@@ -1,1 +1,0 @@
-alert('Halo, ini adalah program JavaScript eksternal')
