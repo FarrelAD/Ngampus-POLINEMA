@@ -1,4 +1,4 @@
-package src.inheritance.dua;
+package src.inheritance.dua.persiapan;
 
 public class Main {
     public static void main(String[] args) {

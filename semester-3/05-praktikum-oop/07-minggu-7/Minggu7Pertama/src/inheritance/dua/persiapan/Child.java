@@ -1,4 +1,4 @@
-package src.inheritance.dua;
+package src.inheritance.dua.persiapan;
 
 public class Child extends Parent{
     public int x = 10;
