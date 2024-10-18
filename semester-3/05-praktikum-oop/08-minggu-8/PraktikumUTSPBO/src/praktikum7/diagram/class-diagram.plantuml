@@ -1,0 +1,48 @@
+@startuml
+
+class Komputer {
+    +merk: String
+    +kecProcessor: int
+    +sizeMemory: int
+    +jenisProcessor: String
+    +Komputer()
+    +Komputer(merk: String, int: kecProcessor, sizeMemory: int, jenisProcessor: String)
+    +tampilData(): void
+}
+
+class Laptop {
+    +jenisBaterai: String
+    +Laptop()
+    +Laptop(merk: String, int: kecProcessor, sizeMemory: int, jenisProcessor: String, jenisBaterai: String)
+    +tampilLaptop(): void
+}
+
+class Pc {
+    +ukuranMonitor: int
+    +Pc()
+    +Pc(merk: String, int: kecProcessor, sizeMemory: int, jenisProcessor: String, ukuranMonitor: int)
+    +tampilPc(): void
+}
+
+class Mac {
+    +security: String
+    +Mac()
+    +Mac(merk: String, int: kecProcessor, sizeMemory: int, jenisProcessor: String, jenisBaterai: String, security: String)
+    +tampilMac(): void
+}
+
+class Windows {
+    +fitur: String
+    +Windows()
+    +Windows(merk: String, int: kecProcessor, sizeMemory: int, jenisProcessor: String, jenisBaterai: String, fitur: String)
+    +tampilWindows(): void
+}
+
+
+
+Komputer <|-- Laptop
+Komputer <|-- Pc
+Laptop <|-- Mac
+Laptop <|-- Windows
+
+@enduml

@@ -1,0 +1,47 @@
+@startuml
+
+class Zombie {
+    #health: int
+    #level: int
+    +heal(): void
+    +destroyed(): void
+    +getZombieInfo(): String
+}
+
+class JumpingZombie {
+    +JumpingZombie(health: int, level: int)
+    +heal(): void
+    +destroyed(): void
+    +getZombieInfo(): String
+}
+
+class WalkingZombie {
+    +WalkingZombie(health: int, level: int)
+    +heal(): void
+    +destroyed(): void
+    +getZombieInfo(): String
+}
+
+interface Destroyable {
+    +destroyed(): void
+}
+
+class Barrier {
+    -strength: int
+    +Barrier(strength: int)
+    +setStrength(strength: int): void
+    +getStrength(): int
+    +destroy(): void
+    +getBarrierInfo(): String
+}
+
+class Plant {
+    +doDestroy(d: Destroyable): void
+}
+
+Zombie <|-- JumpingZombie
+Zombie <|-- WalkingZombie
+Destroyable <|.. Zombie
+Destroyable <|.. Barrier
+
+@enduml

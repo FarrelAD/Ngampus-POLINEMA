@@ -1,0 +1,32 @@
+@startuml
+
+class DaftarGaji {
+    +listPegawai: Pegawai[]
+    -DaftarGaji(x: int)
+    -addPegawai(pegawai: Pegawai): void
+    -printSemuaGaji(): void
+}
+
+class Pegawai {
+    +nip: String
+    +nama: String
+    +alamat: String
+    -Pegawai(nip: String, nama: String, alamat: String)
+    -getNama(): String
+    -getGaji(): int
+}
+
+class Dosen {
+    +jumlahSKS: int
+    +TARIF_SKS: int
+    -Dosen(nip: String, nama: String, alamat: String)
+    -setSks(sks: int): void
+    -getGaji(): int
+}
+
+
+
+DaftarGaji o-- Pegawai
+Pegawai <-- Dosen
+
+@enduml

@@ -1,0 +1,79 @@
+@startuml
+
+class Mahasiswa {
+    -nama: String
+    -stnk: Stnk
+    -ktm: Ktm
+    -motor: Motor
+    +Mahasiswa(nama: String, ktm: Ktm)
+    +getNama(): String
+    +getKtm(): Ktm
+    +getStnk(): Stnk
+    +setStnk(stnk: Stnk): void
+    +setKtm(ktm: Ktm): void
+    +setMotor(motor: Motor): void
+    +keluarParkiran(petugas: PetugasParkir): void
+}
+
+class Motor {
+    -merk: String
+    -platKendaraan : String
+    -warnaKendaraan : String
+    -isiSilinder: int
+    +Motor(merk: String, platKendaraan: String, warnaKendaraan: String, isiSilinder: int)
+    +getMerk(): String
+    +getPlatKendaraan(): String
+    +getWarnaKendaraan(): String
+    +getIsiSilinder(): int
+    +setPlatKendaraan(platKendaraan: String): void
+    +setWarnaKendaraan(warnaKendaraan: String): void
+    +setIsiSilinder(isiSilinder: int): void
+}
+
+class Stnk {
+    -nomorStnk : String
+    -namaPemilik : String
+    -merk : String
+    -nomorRangka : String
+    -warnaKendaraan : String
+    -isiSilinder: int
+    +Stnk(nomorStnk: String, namaPemilik: String, merk: String, nomorRangka: String, warnaKendaraan: String, isiSilinder: int)
+    +getNomorStnk(): String
+    +getNamaPemilik(): String
+    +getMerk(): String
+    +getNomorRangka(): String
+    +getWarnaKendaraan(): String
+    +getIsiSilinder(): int
+    +setNomorStnk(nomorStnk: String): void
+    +setNamaPemilik(namaPemilik: String): void
+    +setWarnaKendaraan(warnaKendaraan: String): void
+    +setIsiSilinder(isiSilinder: int): void
+}
+
+class Ktm {
+    -nama: String
+    -nim: String
+    -prodi: String
+    +Ktm(nama: String, nim: String, prodi: String)
+    +getNama(): String
+    +getNim(): String
+    +getProdi(): String
+}
+
+class PetugasParkir {
+    -nama : String
+    -idPetugas : String
+    +PetugasParkir(nama: String, idPetugas: String)
+    +getNama(): String
+    +getIdPetugas(): String
+    +cekStnk(stnk: Stnk): void
+    -konfirmasiCekKtm(mhs: Mahasiswa): void
+    -cekKtm(mhs: Mahasiswa): void
+}
+
+Mahasiswa o-- Motor : memiliki
+Mahasiswa *-- Ktm : memiliki
+Mahasiswa o-- Stnk : memiliki
+Mahasiswa <-- PetugasParkir : mengecek STNK
+
+@enduml
