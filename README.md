@@ -29,5 +29,6 @@ I hope this repository can help me to manage my college stuff. I also hope this 
 
 ### 3rd semester
 - [ENGLISH 2](semester-3/02-english)
+- [METODE NUMERIK](semester-3/03-metode-numerik)
 - [DESAIN DAN PEMROGRAMAN WEB](https://github.com/FarrelAD/Kuliah-Web-Basic)
 - [BASIS DATA LANJUT](semester-3/07-basis-data-lanjut)
