@@ -28,5 +28,6 @@ I hope this repository can help me to manage my college stuff. I also hope this 
 - [DESAIN ANTARMUKA](semester-2/09-desain-antarmuka)
 
 ### 3rd semester
+- [ENGLISH 2](semester-3/02-english)
 - [DESAIN DAN PEMROGRAMAN WEB](https://github.com/FarrelAD/Kuliah-Web-Basic)
 - [BASIS DATA LANJUT](semester-3/07-basis-data-lanjut)
